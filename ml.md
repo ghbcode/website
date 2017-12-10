@@ -1,8 +1,6 @@
 # Notes on Machine Learning Topics
 
 
-
-
 * 15 bias – variance, overfitting (variance), lebesge
 * 16: midterm review so start of l2 regularization
 * 17: l2 regularization
