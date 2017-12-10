@@ -45,9 +45,10 @@ Each topic will be covered within a self contained python notebook.
   * NN algorithm
   * Farthest Neighbor algorithm
 
-You can use the [editor on GitHub](https://github.com/ghbcode/github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+##MISC
+https://en.wikipedia.org/wiki/Likelihood_function
+> For example, some likelihood functions are for the parameters that explain a collection of statistically independent observations. In such a situation, the likelihood function factors into a product of individual likelihood functions. The logarithm of this product is a sum of individual logarithms, and the derivative of a sum of terms is often easier to compute than the derivative of a product.
 
 ### Markdown
 
