@@ -15,16 +15,16 @@
     * correlation of the trees is small/er and this also reduces variance
     * formulas for regression and classification provided
 * 24: Boosting, another adaptive basis-function model
- * a weak learner that can classify entire feature space 
- * Objective function of AdaBoost provided
-  * uses exponential loss as the base to find the argmin Lec24p5
+  * a weak learner that can classify entire feature space 
+  * Objective function of AdaBoost provided
+    * uses exponential loss as the base to find the argmin Lec24p5
 * 25: Semi-supervised learning
   * inductive - supervised learning, i.e. learn from labeled data
   * transductive semi-supervised learning- predict the labels on the unlabeled instances of the training data.
   * Self training algo: use labeled data to find f_hat, then using f_hat label unlabeled data
   * propagating 1-NN
   * Mixture models
-   * Great video: https://www.youtube.com/watch?v=REypj2sy_5U&list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt
+    * Great video: https://www.youtube.com/watch?v=REypj2sy_5U&list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt
 * 26: More mixture models and then EM (expectation maximization)
   * Great video: https://www.youtube.com/watch?v=iQoXFmbXRJA&index=2&list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt
   * Page 4 shows difficulty in mixture models and reason for EM
@@ -33,12 +33,12 @@
 * 27: Unsupervised learning : first page has good uses 
   * data clustering or grouping (helps find features or centroids)
   * Based on similarity or dissimilarity measures
-   * euclidean distance (x-y)^2, l1 norm |x-y|
-   * for categorical features it can be the Hamming distance (number of features that are different between x and y
+    * euclidean distance (x-y)^2, l1 norm |x-y|
+    * for categorical features it can be the Hamming distance (number of features that are different between x and y
     * a couple of other measures
-    * hierarchical graphical clustering 
-    * aglomerative hierarchical clustering 
-     * dendogram
+  * hierarchical graphical clustering 
+  * aglomerative hierarchical clustering 
+    * dendogram
 * 28: aglomerative hierarchical clustering 
   * useful measures
   * NN algorithm
