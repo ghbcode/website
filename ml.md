@@ -15,9 +15,9 @@
     * correlation of the trees is small/er and this also reduces variance
     * formulas for regression and classification provided
 * 24: Boosting, another adaptive basis-function model
-   * a weak learner that can classify entire feature space 
-   * Objective function of AdaBoost provided
-    * uses exponential loss as the base to find the argmin Lec24p5
+ * a weak learner that can classify entire feature space 
+ * Objective function of AdaBoost provided
+  * uses exponential loss as the base to find the argmin Lec24p5
 * 25: Semi-supervised learning
   * inductive - supervised learning, i.e. learn from labeled data
   * transductive semi-supervised learning- predict the labels on the unlabeled instances of the training data.
