@@ -1,6 +1,6 @@
 ## Welcome to GitHub Pages
 
-[Machine Learning Notes](ml.md)
+[Machine Learning Notes](github.io/ml.md)
 
 You can use the [editor on GitHub](https://github.com/ghbcode/github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
