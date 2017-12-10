@@ -1,22 +1,24 @@
 # Notes on Machine Learning Topics
 
 
--- 15 bias – variance, overfitting (variance), lebesge
--- 16: midterm review so start of l2 regularization
--- 17: l2 regularization
--- 18: L1 regularization, promotes sparsity
--- 19: L0 and Bayesian feature selection
--- 20: p-norms, Bridge regression is the family of penalized regressions (where Lasso is gamma=1, ridge is gamma=2), Validation and test set with very good E_out and bounding math. AML chapter 4.3 and on has good material on this
--- 21: More on Training and validation with bounding math. Adaptive basis-function models, CART (decision trees) forms a tree and a set of regions in feature space
--- 22: Very thorough analysis of CART
--- 23: 1st page has a very good pros/cons on CART. Random forest is an averaging over individual trees to get better results. 
---- Pseudo algorithm. 
----- Some part is a Bagging (or bootstrap aggregating) procedure. Reduces variance (see averaging function)
----- correlation of the trees is small/er and this also reduces variance
----- formulas for regression and classification provided
--- 24: Boosting, another adaptive basis-function model
---- a weak learner that can classify entire feature space
---- Objective function of AdaBoost provided
+
+
+* 15 bias – variance, overfitting (variance), lebesge
+* 16: midterm review so start of l2 regularization
+* 17: l2 regularization
+* 18: L1 regularization, promotes sparsity
+* 19: L0 and Bayesian feature selection
+* 20: p-norms, Bridge regression is the family of penalized regressions (where Lasso is gamma=1, ridge is gamma=2), Validation and test set with very good E_out and bounding math. AML chapter 4.3 and on has good material on this
+* 21: More on Training and validation with bounding math. Adaptive basis-function models, CART (decision trees) forms a tree and a set of regions in feature space
+* 22: Very thorough analysis of CART
+* 23: 1st page has a very good pros/cons on CART. Random forest is an averaging over individual trees to get better results. 
+  * Pseudo algorithm. 
+    * Some part is a Bagging (or bootstrap aggregating) procedure. Reduces variance (see averaging function)
+    * correlation of the trees is small/er and this also reduces variance
+    *formulas for regression and classification provided
+* 24: Boosting, another adaptive basis-function model
+   * a weak learner that can classify entire feature space 
+   * Objective function of AdaBoost provided
 ---- uses exponential loss as the base to find the argmin Lec24p5
 -- 25: Semi-supervised learning
 --- inductive - supervised learning, i.e. learn from labeled data
@@ -43,7 +45,6 @@
 --- useful measures
 --- NN algorithm
 --- Farthest Neighbor algorithm
-
 
 You can use the [editor on GitHub](https://github.com/ghbcode/github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
