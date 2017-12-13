@@ -4,4 +4,3 @@
 * fourth item
 * very good setup and use of git inside eclipse
 	* http://www.vogella.com/tutorials/EclipseGit/article.html#git-support-for-eclipse
-* need more
