@@ -2,6 +2,36 @@
 
 Each topic will be covered within a self contained python notebook.
 
+Other topics
+* virtual environments
+* structure code like a packate
+  * https://sdsawtelle.github.io/blog/output/data-science-project-standard-cookiecutter-structure.html
+* regex
+  * https://sdsawtelle.github.io/blog/output/regular-expressions-in-python.html
+* iterators
+  * https://sdsawtelle.github.io/blog/output/python-iterators-and-generators.html
+* working with large files
+  * https://sdsawtelle.github.io/blog/output/large-data-files-pandas-sqlite.html
+* dividing by n-1 for variance
+  * http://mortada.net/computing-sample-variance-why-divide-by-n-1.html
+
+Short Version
+* MLE vs MAP
+* regression
+  * l2, l1 and l0 regularizer
+  * https://sdsawtelle.github.io/blog/output/week2-andrew-ng-machine-learning-with-python.html
+* logistic regression
+* Generalization error
+  * learning curve
+* Bayesian
+* Decision trees, CART, Random Forest
+* AdaBoost
+* SSL
+* USL (pca and kmeans)
+  * https://sdsawtelle.github.io/blog/output/week8-andrew-ng-machine-learning-with-python.html
+
+Long Version
+* 
 * 15 bias – variance, overfitting (variance), lebesge
 * 16: midterm review so start of l2 regularization
 * 17: l2 regularization
