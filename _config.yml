@@ -1,8 +1,3 @@
 theme: jekyll-theme-cayman
 title: GHBCode's Site
-description: Notes and samples on math, data analysis and Python
-webrick:
-  headers:
-    ml: Machine Leaning Topics
-    python: Python Topics
-    misc: Miscellaneous Topics
+description: Notes and samples on Math, Data Analysis and Python
