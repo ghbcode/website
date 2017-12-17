@@ -1,3 +1,7 @@
+<style lang="scss">
+@import 'assets/css/style.css';
+</style>
+
 # Notes on Machine Learning Topics
 
 Each topic will be covered within a self contained python notebook.
