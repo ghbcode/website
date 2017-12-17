@@ -10,7 +10,8 @@ toc_icon: "gear"
 
 [Github usage resources](github_resources.md)
 
-[fred python notebook](notebooks/FRED-download.html)
+[fred python notebook](https://ghbcode.github.io/website/notebooks/Fred-download.html)
+[fred python notebook](/website/notebooks/Fred-download.html)
 
 ### Markdown
 
