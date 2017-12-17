@@ -4,7 +4,7 @@
 
 [Github usage resources](github_resources.md)
 
-[fred python notebook](FRED-download.html)
+[fred python notebook](master/FRED-download.html)
 
 ### Markdown
 
