@@ -8,7 +8,7 @@ toc_icon: "gear"
 
 [Machine Learning Notes](ml.md)
 
-[Python samples](python-notes.md)
+[Python samples](python_notes.md)
 
 [Github usage resources](github_resources.md)
 
