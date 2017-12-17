@@ -5,3 +5,5 @@
 * fourth item
 * very good setup and use of git inside eclipse
 	* http://www.vogella.com/tutorials/EclipseGit/article.html#git-support-for-eclipse
+* excellent
+  * https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/#3-customize-your-website
