@@ -10,8 +10,6 @@ toc_icon: "gear"
 
 [Github usage resources](github_resources.md)
 
-[fred python notebook](/website/notebooks/Fred-download.html)
-
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
