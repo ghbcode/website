@@ -1,3 +1,9 @@
+---
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "gear"
+---
+
 ## Welcome to ghbcode's GitHub Pages
 
 [Machine Learning Notes](ml.md)
