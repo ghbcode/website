@@ -1,4 +1,8 @@
-## Notes on Python topics
+---
+layout: default
+title: Notes and sample on Python Topics
+description: posted by ghbcode on 2017/01/17
+---
 
 - Data queries
   - [Fetch FRED data via fredapi](/website/notebooks/Fred-download.html)
