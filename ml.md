@@ -1,8 +1,9 @@
-<style lang="scss">
-@import 'assets/css/style.css';
-</style>
+---
+layout: post
+title:  Notes on Machine Learning Topics
+date:   2017-01-17
+---
 
-# Notes on Machine Learning Topics
 
 Each topic will be covered within a self contained python notebook.
 
