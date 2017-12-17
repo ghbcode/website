@@ -1,7 +1,5 @@
 ---
-layout: post
 title:  Notes on Machine Learning Topics
-date:   2017-01-17
 ---
 
 
