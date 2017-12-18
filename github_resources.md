@@ -1,7 +1,7 @@
 ---
 layout: default
-title: GHBCode's Site
-description: Notes and samples on Math, Machine Learning and Python
+title: Github Resources
+description: Notes on Github settings, etc.
 ---
 
 * [Github guides:](https://guides.github.com/)
