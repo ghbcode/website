@@ -1,5 +1,7 @@
 ---
-title:  Notes on Machine Learning Topics
+layout: default
+title: Topics in Machine Learning
+description: posted by ghbcode on 2016/05/31
 ---
 
 
