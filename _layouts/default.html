@@ -1,5 +1,21 @@
 
 <!DOCTYPE html>
+<style>
+  #nav {
+width:750px;
+margin:0 auto;
+list-style:none;
+}
+#nav li {
+float:left;
+}
+#nav a {
+display:block;
+text-align:center;
+width:150px; /* fixed width */
+text-decoration:none; 
+}
+</style>
 <html lang="en-US">
   <head>
     <meta charset="UTF-8">
@@ -32,14 +48,14 @@
        <!-- <a href="https://github.com/ghbcode/website" class="btn">View on GitHub</a> -->
           
     </section>
-<div width="15%" float="left-center">
-    <ul class="nav">
+
+    <ul id="nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="ml.html">Machine Learning Topics</a></li>
         <li><a href="python_notes.html">Python Notes</a></li>
         <li><a href="github_resources.html">Misc</a></li>
     </ul>
-</div>
+    
     <section class="main-content">
       {{ content }}
       <footer class="site-footer">
