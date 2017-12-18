@@ -5,7 +5,7 @@ description: posted by ghbcode on 2017/01/17
 ---
 
 Data queries
-  - [Fetch FRED data via fredapi](/website/notebooks/Fred-download.html)
+  - [Fetch FRED data via fredapi](/website/notebooks/FRED-download.html)
   - [Fetch Quandl data](/website/notebooks/Quandl-download.html)
 
 Troubleshooting, timing and profiling
