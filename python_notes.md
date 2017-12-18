@@ -8,17 +8,17 @@ Data queries
   - [Fetch FRED data via fredapi](/website/notebooks/Fred-download.html)
   - [Fetch Quandl data](/website/notebooks/Quandl-download.html)
 
-- Interesting posts
-- Do a few on data
- - quandl
- - fredapi
-- python pdb, time
-- python profiling
-  - http://mortada.net/easily-profile-python-code-in-jupyter.html
-- tensor flow: TensorFlow is an open-source software library for dataflow programming across a range of tasks. It is a symbolic math library, and also used for machine learning applications such as neural networks.
-  - http://sdsawtelle.github.io/blog/output/getting-started-with-tensorflow-in-jupyter.html
+Troubleshooting, timing and profiling
+  - [Troubleshoot using pdb](/website/notebooks/troubleshoot-with-pdb.html)
+  - [Timing your code](/website/notebooks/time-your-code.html)
+  - [How to profile your code](/website/notebooks/profile-your-code.html)
+    - http://mortada.net/easily-profile-python-code-in-jupyter.html
 
 Other topics
+* dividing by n-1 for variance
+  * http://mortada.net/computing-sample-variance-why-divide-by-n-1.html
+* tensor flow: TensorFlow is an open-source software library for dataflow programming across a range of tasks. It is a symbolic math library, and also used for machine learning applications such as neural networks.
+  * http://sdsawtelle.github.io/blog/output/getting-started-with-tensorflow-in-jupyter.html
 * virtual environments
 * structure code like a package
   * https://sdsawtelle.github.io/blog/output/data-science-project-standard-cookiecutter-structure.html
@@ -28,5 +28,3 @@ Other topics
   * https://sdsawtelle.github.io/blog/output/python-iterators-and-generators.html
 * working with large files
   * https://sdsawtelle.github.io/blog/output/large-data-files-pandas-sqlite.html
-* dividing by n-1 for variance
-  * http://mortada.net/computing-sample-variance-why-divide-by-n-1.html
