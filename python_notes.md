@@ -28,3 +28,5 @@ Other topics
   * https://sdsawtelle.github.io/blog/output/python-iterators-and-generators.html
 * working with large files
   * https://sdsawtelle.github.io/blog/output/large-data-files-pandas-sqlite.html
+* Good commenting examples
+  * http://docs.python-guide.org/en/latest/writing/documentation/
