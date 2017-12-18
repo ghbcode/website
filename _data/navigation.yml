@@ -1,0 +1,11 @@
+docs:
+  - title: "Main Page"
+    url: index.md
+  - title: Various Topics
+    children:
+      - title: "Machine Learning Topics"
+        url: ml.md
+      - title: "Python Topics"
+        url: python_notes.md
+      - title: "Miscellaneous"
+        url: github_resources.md
