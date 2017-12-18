@@ -2,6 +2,7 @@
 layout: default
 title: GHBCode's Site
 description: Notes and samples on Math, Machine Learning and Python
+toc: True
 ---
 
 * [Machine Learning Notes](ml.md)
