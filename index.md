@@ -1,10 +1,8 @@
 ---
-toc: true
-toc_label: "My Table of Contents"
-toc_icon: "gear"
+layout: default
+title: GHBCode's Site
+description: Notes and samples on Math, Machine Learning and Python
 ---
-
-## Welcome to ghbcode's GitHub Pages
 
 [Machine Learning Notes](ml.md)
 
