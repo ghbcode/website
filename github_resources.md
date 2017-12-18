@@ -2,6 +2,8 @@
 layout: default
 title: Github Resources
 description: Notes on Github settings, etc.
+sidebar:
+  nav: "docs"
 ---
 
 * [Github guides:](https://guides.github.com/)
