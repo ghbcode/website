@@ -7,7 +7,8 @@ description: posted by ghbcode on 2016/05/31
 
 Each topic is covered within a self contained python notebook.
 
-* [Sample machine learning on a house sale price data set](/notebooks/ml_house_sale_price.ml)
+* [Sample machine learning on a house sale price data set](/notebooks/ml_house_sale_price.html)
+
 Short Version
 * MLE vs MAP
 * regression
