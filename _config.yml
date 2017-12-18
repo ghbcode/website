@@ -1,3 +1,12 @@
 theme: jekyll-theme-cayman
 title: GHBCode's Site
 description: Notes and samples on Math, Data Analysis and Python
+docs:
+  - title: Various Topics
+    children:
+      - title: "Machine Learning Topics"
+        url: ml.md
+      - title: "Python Topics"
+        url: python_notes.md
+      - title: "Miscellaneous"
+        url: github_resources.md
