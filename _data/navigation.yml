@@ -1,6 +1,4 @@
 docs:
-  - title: "Main Page"
-    url: index.md
   - title: Various Topics
     children:
       - title: "Machine Learning Topics"
