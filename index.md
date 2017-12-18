@@ -8,7 +8,6 @@ toc: True
 * [Machine Learning Notes](ml.md)
 * [Python samples](python_notes.md)
 * [Github usage resources](github_resources.md)
-{:toc}
 
 ### Markdown
 
