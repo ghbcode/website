@@ -4,11 +4,10 @@ title: GHBCode's Site
 description: Notes and samples on Math, Machine Learning and Python
 ---
 
-[Machine Learning Notes](ml.md)
-
-[Python samples](python_notes.md)
-
-[Github usage resources](github_resources.md)
+* [Machine Learning Notes](ml.md)
+* [Python samples](python_notes.md)
+* [Github usage resources](github_resources.md)
+{:toc}
 
 ### Markdown
 
