@@ -1,8 +1,13 @@
+---
+layout: default
+title: GHBCode's Site
+description: Notes and samples on Math, Machine Learning and Python
+---
+
 * [Github guides:](https://guides.github.com/)
 * [http://rogerdudler.github.io/git-guide/](No BS instructions)
-* Good - [how to use the desktop app](http://docsbeta.pinegrow.com/host-html-website-github-pages-free/)
+* [How to change webpage settings](https://ehmatthes.github.io/GitHub-Pages-Non-Rubyists/)
 * https://gist.github.com/blackfalcon/8428401
-* fourth item
 * very good setup and use of git inside eclipse
 	* http://www.vogella.com/tutorials/EclipseGit/article.html#git-support-for-eclipse
 * excellent
