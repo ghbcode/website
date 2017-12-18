@@ -5,8 +5,9 @@ description: posted by ghbcode on 2016/05/31
 ---
 
 
-Each topic will be covered within a self contained python notebook.
+Each topic is covered within a self contained python notebook.
 
+* [Sample machine learning on a house sale price data set](/notebooks/ml_house_sale_price.ml)
 Short Version
 * MLE vs MAP
 * regression
