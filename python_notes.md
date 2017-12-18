@@ -4,8 +4,9 @@ title: Notes and samples on Python Topics
 description: posted by ghbcode on 2017/01/17
 ---
 
-- Data queries
+Data queries
   - [Fetch FRED data via fredapi](/website/notebooks/Fred-download.html)
+  - [Fetch Quandl data](/website/notebooks/Quandl-download.html)
 
 - Interesting posts
 - Do a few on data
