@@ -5,33 +5,8 @@ description: Notes and samples on Math, Machine Learning and Python
 toc: True
 ---
 
-* [Machine Learning Notes](ml.md)
-* [Python samples](python_notes.md)
-* [Github usage resources](github_resources.md)
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Who am I? 
+I am a father and a working professional earning my Master's degree in Financial Engineering. My interest are varied although they mostly lie in the realms of Math and Science. I have always been and will remain to be an avid student and these pages are meant to keep track of important topics so that I can refer back to them when I have any questions or doubts. This is a work in progress so there will surely be many changes. 
 
 
 ### Support or Contact
