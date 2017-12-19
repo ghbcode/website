@@ -5,12 +5,12 @@ description: posted by ghbcode on 2016/05/31
 ---
 
 
-Each topic is covered within a self contained python notebook.
+Each topic is covered within a self contained python notebook. I will surely make somewhat incorrect statements here and there so know that the first priority here is to get the 'gist' down. Updates and revisions to follow. 
 
 * [Sample machine learning on a house sale price data set](/website/notebooks/ml_house_sale_price.html)
+* [Bayes, MLE and MAP explained](/website/notebooks/Bayes-MLE-MAP.html)
 
 Short Version
-* MLE vs MAP
 * regression
   * l2, l1 and l0 regularizer
   * https://sdsawtelle.github.io/blog/output/week2-andrew-ng-machine-learning-with-python.html
