@@ -5,7 +5,13 @@ description: posted by ghbcode on 2016/05/31
 ---
 
 
-Each topic is covered within a self contained python notebook. I will surely make somewhat incorrect statements here and there so know that the first priority here is to get the 'gist' down. Updates and revisions to follow. 
+Each topic is covered within a self contained python notebook. To begin with, I'm noting the main ideas first and updates/revisions will follow.
+
+There are various ways to categorize machine learning methods but a common way to think about it is via the following categories. Note that the is another distinction, whether your output is a real-valued number or some sort of classification. For the former, an example would be to predict the price of a stock. This is commonly referred to as 'regression.' The later is referred to as 'classification' and it would answer the question 'does the input belong to class A or B?'. Lastly note that classification can also contain probability measure as in, 'input X is of class A with a probability of 80%'.
+
+* Supervised Learning - use labeled data to train your algorithm
+* Semi-supervised Learning - use some labeled data to train your algorithm. Use unlabeled data to possibly infer even more information such as distribution of classes
+* Unsupervised Learning - tries to find some sort of structure in the data. Depends heavily on similarity (ex: distance) and dissimilarity measures (ex: inverse distance)
 
 * [Sample machine learning on a house sale price data set](/website/notebooks/ml_house_sale_price.html)
 * [Bayes, MLE and MAP explained](/website/notebooks/Bayes-MLE-MAP.html)
