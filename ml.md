@@ -10,25 +10,25 @@ Each topic is covered within a self contained python notebook. To begin with, I'
 There are various ways to categorize machine learning methods but a common way to think about it is via the following categories. Note that the is another distinction, whether your output is a real-valued number or some sort of classification. For the former, an example would be to predict the price of a stock. This is commonly referred to as 'regression.' The later is referred to as 'classification' and it would answer the question 'does the input belong to class A or B?'. Lastly note that classification can also contain probability measure as in, 'input X is of class A with a probability of 80%'.
 
 * Supervised Learning - use labeled data to train your algorithm
+  * [Bayes, MLE and MAP Preliminaries](/website/notebooks/Bayes-MLE-MAP.html)
+  * Linear Regression, 
+    * ridge(l2), lasso(l1), l0, elastic net
+    * https://sdsawtelle.github.io/blog/output/week2-andrew-ng-machine-learning-with-python.html
+  * Polynomial regression
+  * Logistic Regression
+  * Naive Bayes
+  * Decision Trees (CART)
+  * Support Vector Machine (SVM)
+  * Ensemble Methods
+    * Random Forest
+    * Boosting
+  * [Sample machine learning on a house sale price data set](/website/notebooks/ml_house_sale_price.html)
 * Semi-supervised Learning - use some labeled data to train your algorithm. Use unlabeled data to possibly infer even more information such as distribution of classes
 * Unsupervised Learning - tries to find some sort of structure in the data. Depends heavily on similarity (ex: distance) and dissimilarity measures (ex: inverse distance)
-
-* [Sample machine learning on a house sale price data set](/website/notebooks/ml_house_sale_price.html)
-* [Bayes, MLE and MAP explained](/website/notebooks/Bayes-MLE-MAP.html)
-
-Short Version
-* regression
-  * l2, l1 and l0 regularizer
-  * https://sdsawtelle.github.io/blog/output/week2-andrew-ng-machine-learning-with-python.html
-* logistic regression
-* Generalization error
-  * learning curve
-* Bayesian
-* Decision trees, CART, Random Forest
-* AdaBoost
-* SSL
-* USL (pca and kmeans)
+  * PCA
+  * k-means
   * https://sdsawtelle.github.io/blog/output/week8-andrew-ng-machine-learning-with-python.html
+
 
 Long Version
 * 
