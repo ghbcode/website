@@ -11,10 +11,13 @@ There are various ways to categorize machine learning methods but a common way t
 
 * **Supervised Learning** - use labeled data to train your algorithm
   * [Bayes, MLE and MAP Preliminaries](/website/notebooks/Bayes-MLE-MAP.html)
+    * Takeaway: Compute a point estimate 
   * [Linear Regression using Ordinary Least Squares and the Normal Equation](/website/notebooks/linear-regression-ols-normal-equation.html), 
   * Linear Regression with Regularization
-    * [Ridge (l2) Regression](/website/notebooks/Ridge-regression.html) 
-    * lasso(l1), l0, elastic net
+    * [Ridge (l2) Regression](/website/notebooks/Ridge-regression.html)
+      * Takeaway: Penalize complexity for the linear regression
+    * [Lasso(l1) Regression](/website/notebooks/Lasso-l1-regression.html)
+      * Takeaway: Promote sparcity
     * https://sdsawtelle.github.io/blog/output/week2-andrew-ng-machine-learning-with-python.html
   * Polynomial regression
   * Logistic Regression
