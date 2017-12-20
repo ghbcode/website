@@ -11,7 +11,7 @@ There are various ways to categorize machine learning methods but a common way t
 
 * **Supervised Learning** - use labeled data to train your algorithm
   * [Bayes, MLE and MAP Preliminaries](/website/notebooks/Bayes-MLE-MAP.html)
-  * [Linear Regression using Ordinary Least Squares (OLS)][/website/notebooks/linear-regression-ols.html], 
+  * [Linear Regression using Ordinary Least Squares and the Normal Equation](/website/notebooks/linear-regression-ols-normal-equation.html), 
     * ridge(l2), lasso(l1), l0, elastic net
     * https://sdsawtelle.github.io/blog/output/week2-andrew-ng-machine-learning-with-python.html
   * Polynomial regression
