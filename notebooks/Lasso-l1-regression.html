@@ -11777,7 +11777,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Lasso-(L1)-Regression">Lasso (L1) Regression<a class="anchor-link" href="#Lasso-(L1)-Regression">&#182;</a></h1><p><br><br>
 Lasso regression goes even further than Ridge regression by actually promoting sparsity as opposed to simply reducing overfitting. Lasso regression will make some of the weights close to or equal to zero. In the figure below from Elements of Statistical Learning by Hastie, Tibshirani, and Friedman, l1 regression is on the left hand side. As the optimization relaxes the objective function (the red ovals), the objective function is more likely to intersect the contraints (the diamond) at the 'pointy ends' which means that one of the features is equal to 0.</p>
-<p><img src="assets/l2-l1-regularization.png" alt="l1 and l1 regularization"></p>
+<p><img src="/website/assets/l2-l1-regularization.png" alt="l1 and l1 regularization"></p>
 <p>Lasso 'Regularization' is accomplished by using MAP estimation with a Laplacian prior. I.e.<br><br>
 $$P(w) = Lap(w|\lambda)\\
 = \prod_{j=1}^{D} Lap(w_j|0, \frac{1}{\lambda})\\
