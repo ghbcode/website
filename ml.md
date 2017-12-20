@@ -33,10 +33,7 @@ There are various ways to categorize machine learning methods but a common way t
 
 
 Long Version
-* 
 * 15 bias – variance, overfitting (variance), lebesge
-* 16: midterm review so start of l2 regularization
-* 17: l2 regularization
 * 18: L1 regularization, promotes sparsity
 * 19: L0 and Bayesian feature selection
 * 20: p-norms, Bridge regression is the family of penalized regressions (where Lasso is gamma=1, ridge is gamma=2), Validation and test set with very good E_out and bounding math. AML chapter 4.3 and on has good material on this
@@ -76,29 +73,3 @@ Long Version
   * useful measures
   * NN algorithm
   * Farthest Neighbor algorithm
-
-
-## MISC
-Source - https://en.wikipedia.org/wiki/Likelihood_function
-> For example, some likelihood functions are for the parameters that explain a collection of statistically independent observations. In such a situation, the likelihood function factors into a product of individual likelihood functions. The logarithm of this product is a sum of individual logarithms, and the derivative of a sum of terms is often easier to compute than the derivative of a product.
-
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-
-> quoted text that can span multiple lines
-```
