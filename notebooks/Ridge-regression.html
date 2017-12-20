@@ -11807,7 +11807,7 @@ And by the same method used to compute the normal equation in the linear regress
 <br><br>
 $$w_{Ridge} = (\lambda I_D + X^TX)^{-1}X^Ty $$
 <br><br>
-Leaving aside the details, below is sample code for computing $w{Ridge}$ using the normal equation. Assume that 'x_train' has your training samples and 'y_train' has the corresponding labels. 
+Leaving aside the details, below is sample code for computing $w_{Ridge}$ using the normal equation. Assume that 'x_train' has your training samples and 'y_train' has the corresponding labels. 
 <br><blockquote><p>l = .5 # lambda value<br>
 dim = 3 # used to create I vector<br>
 reg = np.matrix(np.eye(dim,dim)*l)<br>
@@ -11825,7 +11825,7 @@ w_ridge = XtX.dot(pd.DataFrame((x_train.T).dot(y_train)))</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ultimately what the 'Complexity Penalty' (via the MAP estimation) did was to increase the value of $w_{Ridge}$ as can be appreciated by the second term. As a result, the minimization step will reduce the weight of each w, with the exception of $w_0$, aka the bias term, therefore reducing overfitting.</p>
+<p>Ultimately what the 'Complexity Penalty' (via the MAP estimation) did was to increase the value of the $w_{Ridge}$ expression as can be appreciated by the second term. As a result, the minimization step will reduce the weight of each w thereby reduce overfitting. Note that the Complexity Penalty applies to all of the weights except for $w_0$ since that is the bias term. The bias term only shifts your curve/estimate up or down and has nothing to do with overfitting.</p>
 
 </div>
 </div>
