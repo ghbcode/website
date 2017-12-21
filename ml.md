@@ -17,9 +17,9 @@ There are various ways to categorize machine learning methods but a common way t
     * [Ridge (l2) Regression](/website/notebooks/Ridge-regression.html)
       * Takeaway: Penalize complexity for the linear regression
     * [Lasso(l1) Regression](/website/notebooks/Lasso-l1-regression.html)
-      * Takeaway: Promote sparcity
+      * Takeaway: Promote sparsity
     * https://sdsawtelle.github.io/blog/output/week2-andrew-ng-machine-learning-with-python.html
-  * Polynomial regression
+  * [Polynomial regression](/website/notebooks/polynomial-regression.html)
   * Logistic Regression
   * Naive Bayes
   * Decision Trees (CART)
