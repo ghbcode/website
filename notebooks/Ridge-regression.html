@@ -11825,7 +11825,7 @@ w_ridge = XtX.dot(pd.DataFrame((x_train.T).dot(y_train)))</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ultimately what the 'Complexity Penalty' (via the MAP estimation) did was to increase the value of the $w_{Ridge}$ expression as can be appreciated by the second term. As a result, the minimization step will reduce the weight of each w thereby reduce overfitting. In the example below Note that the Complexity Penalty applies to all of the weights except for $w_0$ since that is the bias term. The bias term only shifts your curve/estimate up or down and has nothing to do with overfitting. 
+<p>Ultimately what the 'Complexity Penalty' (via the MAP estimation) did was to increase the value of the $w_{Ridge}$ expression as can be appreciated by the second term. As a result, the minimization step will reduce the weight of each w thereby reduce overfitting. In the example below see how the l2 regularizer 'flattens' the linear regression curve and the higher the alpha parameter (the $\lambda$ in the expressions above) the flatter the curve. Note that the Complexity Penalty applies to all of the weights except for $w_0$ since that is the bias term. The bias term only shifts your curve/estimate up or down and has nothing to do with overfitting. 
 <br><br></p>
 <h1 id="Ridge-Regression-with-scikit-learn">Ridge Regression with scikit-learn<a class="anchor-link" href="#Ridge-Regression-with-scikit-learn">&#182;</a></h1>
 </div>
