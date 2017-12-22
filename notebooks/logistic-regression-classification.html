@@ -11786,7 +11786,7 @@ $$s(x) = \frac{1}{1 + e^{-x}} = \frac{e^x}{e^x + 1} $$
 <br><br>
 Note that the $s(-\infty)=0$, $s(0)=.5$ and $s(\infty)=1$. So in the image below which is taken from the book 'Machine Learning: A probabilistic Perspective by Kevin P. Murphy, the right most figure shows the data in the black dots. The x-axis is the SAT score of a group of students and the y-axis is whether or not they passed a particular test other than the SAT. So the data is showing that, for the most part, and this is important because the data is not completely separable, the higher the SAT score the higher the likelihood of passing the other exam. The left figure shows the sigmoid function. So in the right figure logistic regression is shown by the red circles. If you were to run a linear regression on the data you would see a line like the green one on the right figure. As you can see, logistic regression does a better job of fitting the data.
 <br>
-<img src="/website/assets/logistic-regression.png" alt="logistic regression"></p>
+<img src="website/assets/logistic-regression.png" alt="logistic regression"></p>
 
 </div>
 </div>
@@ -11809,7 +11809,10 @@ so that solution becomes:
 <br><br>
 $$NLL(w) = - \sum_{i=1}^{N} log(1+e^{y_iw^Tx})$$
 <br><br>
-The NLL(w) expression no longer has a closed form solution. You need to the gradient and Hessian in order to use optimization to compute the solution.</p>
+The NLL(w) expression no longer has a closed form solution. You need to the gradient and Hessian in order to use optimization to compute the solution.
+<br><br></p>
+<h1 id="Key-Take-Away">Key Take Away<a class="anchor-link" href="#Key-Take-Away">&#182;</a></h1><p><br>
+Logistic Regression is classification, not regression. It uses the Bernoulli distribution and sigmoid function.</p>
 
 </div>
 </div>
