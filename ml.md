@@ -7,7 +7,7 @@ description: posted by ghbcode on 2016/05/31
 
 Each topic is covered within a self contained python notebook. In some cases the notebooks run code using the [scikit-learn library](http://scikit-learn.org/stable/modules/classes.html). To begin I'm noting the main ideas first and updates/revisions will follow.
 
-There are various ways to categorize machine learning methods but a common way to think about it is via the following categories. Note that there is another distinction, whether your output is a real-valued number or some sort of classification. For the former, an example would be to predict the price of a stock. This is commonly referred to as 'regression.' The later is referred to as 'classification' and it would answer the question 'does the input belong to class A or B?'. Lastly note that classification can also contain probability measure as in, 'input X is of class A with a probability of 80%'.
+There are various ways to categorize machine learning methods but a common way to think about it is via the following categories. Note that there is another distinction, whether your output is a real-valued number or some sort of classification. Note that classification can also contain probability measure as in, 'input X is of class A with a probability of 80%'.
 
 * **Supervised Learning** - use labeled data to train your algorithm
   * [Bayes, MLE and MAP Preliminaries](/website/notebooks/Bayes-MLE-MAP.html)
