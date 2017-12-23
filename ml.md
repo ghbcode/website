@@ -33,10 +33,7 @@ There are various ways to categorize machine learning methods but a common way t
 
 Long Version
 * 15 bias – variance, overfitting (variance), lebesge
-* 18: L1 regularization, promotes sparsity
-* 19: L0 and Bayesian feature selection
 * 20: p-norms, Bridge regression is the family of penalized regressions (where Lasso is gamma=1, ridge is gamma=2), Validation and test set with very good E_out and bounding math. AML chapter 4.3 and on has good material on this
-* 21: More on Training and validation with bounding math. Adaptive basis-function models, CART (decision trees) forms a tree and a set of regions in feature space
 * 22: Very thorough analysis of CART
 * 23: 1st page has a very good pros/cons on CART. Random forest is an averaging over individual trees to get better results. 
   * Pseudo algorithm. 
