@@ -16,8 +16,8 @@ There are various ways to categorize machine learning methods but a common way t
     * [Ridge (l2) Regression](/website/notebooks/Ridge-regression.html)
     * [Lasso(l1) Regression](/website/notebooks/Lasso-l1-regression.html)
   * [Polynomial regression](/website/notebooks/polynomial-regression.html)
-  * [Logistic Regression is Classification](/website/notebooks/logistic-regression-classification.html)
-  * Naive Bayes
+  * [Logistic Regression Classification](/website/notebooks/logistic-regression-classification.html)
+  * [Naive Bayes Classification](/website/notebooks/Naive-bayes.html)
   * Decision Trees (CART)
   * Support Vector Machine (SVM)
   * Ensemble Methods
