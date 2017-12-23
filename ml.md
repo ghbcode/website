@@ -7,7 +7,7 @@ description: posted by ghbcode on 2016/05/31
 
 Each topic is covered within a self contained python notebook. In some cases the notebooks run code using the [scikit-learn library](http://scikit-learn.org/stable/modules/classes.html). To begin I'm noting the main ideas first and updates/revisions will follow.
 
-There are various ways to categorize machine learning methods but a common way to think about it is via the following categories. Note that there is another distinction, whether your output is a real-valued number or some sort of classification. Note that classification can also contain probability measure as in, 'input X is of class A with a probability of 80%'.
+There are various ways to categorize machine learning methods but a common way to think about it is via the following  categories, i.e. supervised learning, semi-supervised learning and unsupervised learning. Note that there is another distinction, whether your output is a real-valued number or some sort of classification. Classification can also contain probability measure as in, 'input X is of class A with a probability of 80%'.
 
 * **Supervised Learning** - use labeled data to train your algorithm
   * [Bayes, MLE and MAP Preliminaries](/website/notebooks/Bayes-MLE-MAP.html)
@@ -27,7 +27,7 @@ There are various ways to categorize machine learning methods but a common way t
 * **Semi-supervised Learning** - use some labeled data to train your algorithm. Use unlabeled data to possibly infer even more information such as distribution of classes
 * **Unsupervised Learning** - tries to find some sort of structure in the data. Depends heavily on similarity (ex: distance) and dissimilarity measures (ex: inverse distance)
   * PCA
-  * k-means
+  * k-Nearest Neighbor
   * https://sdsawtelle.github.io/blog/output/week8-andrew-ng-machine-learning-with-python.html
 
 
