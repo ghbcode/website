@@ -1,0 +1,4 @@
+- code example for CART
+- finish the list (svm, rf, adaboost, ssl, usl [pca, knn]
+- python (pdb, profile/timing, venv, structure like a package, unit tests, tensorflow)
+- block stuff
