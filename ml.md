@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Topics in Machine Learning
-description: posted by ghbcode on 2014/05/31
+description: posted by ghbcode on 2014/11/23
 ---
 
 
