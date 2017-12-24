@@ -18,7 +18,7 @@ There are various ways to categorize machine learning methods but a common way t
   * [Polynomial regression](/website/notebooks/polynomial-regression.html)
   * [Logistic Regression Classification](/website/notebooks/logistic-regression-classification.html)
   * [Naive Bayes Classification](/website/notebooks/Naive-bayes.html)
-  * Decision Trees (CART)
+  * [Decision Trees (CART)](/website/notebooks/decision-tree-cart.html)
   * Support Vector Machine (SVM)
   * Ensemble Methods
     * Random Forest
