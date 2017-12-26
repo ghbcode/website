@@ -6,7 +6,7 @@ toc: True
 ---
 
 ### Who am I? 
-I am a father and a working professional earning my Master's degree in Financial Engineering from USC. My interests are varied although they mostly lie in the realms of Math and Science. I have always been and will remain to be an avid student and these pages are meant to keep track of important topics so that I can refer back to them. This is a work in progress so there will surely be changes along the way. 
+I am a father and a working professional earning my Master's degree in Financial Engineering from USC. My interests are varied although they mostly lie in the realms of Math and Science. I have always been and will remain to be an avid student and these pages are meant to keep track of important topics. This is a work in progress so there will surely be changes along the way. 
 
 
 ### Support or Contact
