@@ -11798,7 +11798,9 @@ SVMs can make use of different kernel functions (a topic unto itself) as the dec
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that when SVM encounters a non-separable problem it employs what is knows as the 'kernel trick'. What the kernel trick does is to take a low dimensional input space and turn it into a higher dimensional input space. 
+<p>Note that when SVM encounters a non-separable problem it employs what is knows as the 'kernel trick'. What the kernel trick does is to take a low dimensional input space and turn it into a higher dimensional input space. In the image below the kernel trick is to change the basis function to $\phi(a,b) = \{a, b, a^2+b^2\}$
+<br><br> 
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Kernel_trick_idea.svg/1260px-Kernel_trick_idea.svg.png" alt="kernel trick">
 <br><br></p>
 <h1 id="Take-away">Take away<a class="anchor-link" href="#Take-away">&#182;</a></h1><ul>
 <li>SVM are flexible since different kernel functions may be used as the decision function.</li>
