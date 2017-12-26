@@ -15,13 +15,13 @@ Troubleshooting, timing and profiling
     - http://mortada.net/easily-profile-python-code-in-jupyter.html
 
 Other topics
+* virtual environments
+* structure code like a package
+  * https://sdsawtelle.github.io/blog/output/data-science-project-standard-cookiecutter-structure.html
 * dividing by n-1 for variance
   * http://mortada.net/computing-sample-variance-why-divide-by-n-1.html
 * tensor flow: TensorFlow is an open-source software library for dataflow programming across a range of tasks. It is a symbolic math library, and also used for machine learning applications such as neural networks.
   * http://sdsawtelle.github.io/blog/output/getting-started-with-tensorflow-in-jupyter.html
-* virtual environments
-* structure code like a package
-  * https://sdsawtelle.github.io/blog/output/data-science-project-standard-cookiecutter-structure.html
 * regex
   * https://sdsawtelle.github.io/blog/output/regular-expressions-in-python.html
 * iterators
