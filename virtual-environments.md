@@ -1,4 +1,8 @@
-
+---
+layout: default
+title: Notes and samples on Python Topics
+description: posted by ghbcode on 2015/01/17
+---
 # Virtual Environments (venv)
 <br>
 If you haven't heard of venv or the like I highly recommend that you look into them. What venv allows you to do is to create separtate environments usually with different settings and installed software. For example, you can have Python 2.7 installed in your machine and use venv to use Python 3.x. In windows the inner workings of venv may be more complicated, however, in Linux the 'trick' is simply that your environment variables are updated to reflect the installations in a particular folder. On my machine I'm running python 3.x inside of /Users/myusername/venvp3 so that if you output my \$PYTHONPATH you get:
