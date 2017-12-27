@@ -15,7 +15,7 @@ Troubleshooting, timing and profiling
     - http://mortada.net/easily-profile-python-code-in-jupyter.html
 
 Other topics
-* virtual environments
+* [virtual environments](Reference - Virtual Environments.ipynb)
 * structure code like a package
   * https://sdsawtelle.github.io/blog/output/data-science-project-standard-cookiecutter-structure.html
 * dividing by n-1 for variance
