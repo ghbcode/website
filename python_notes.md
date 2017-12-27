@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Notes and samples on Python Topics
-description: posted by ghbcode on 2017/01/17
+description: posted by ghbcode on 2015/01/17
 ---
 
 Data queries
@@ -15,7 +15,7 @@ Troubleshooting, timing and profiling
     - http://mortada.net/easily-profile-python-code-in-jupyter.html
 
 Other topics
-* [virtual environments](Reference - Virtual Environments.ipynb)
+* [virtual environments](virtual-environments.ipynb)
 * structure code like a package
   * https://sdsawtelle.github.io/blog/output/data-science-project-standard-cookiecutter-structure.html
 * dividing by n-1 for variance
