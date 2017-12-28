@@ -1,7 +1,10 @@
-- add 
-  - pdf of distributions, '
-  - ACF and PACF functions WORKS
-  - GARCH
-- finish the list (svm, rf, adaboost, ssl, usl [pca, knn]
-- python (pdb, profile/timing, venv, structure like a package, unit tests, tensorflow)
-- block stuff (trading, how to have people mine when they land on your site, ethereum programming)
+- ML
+  - finish main page
+  - finish SSL
+  - finish USL (pca, knn)
+- Math
+  - add n-1 post
+  - clean up the other posts
+- Python
+  - (pdb, profile/timing, structure like a package, unit tests, tensorflow)
+- block stuff (trading, ethereum programming)
