@@ -11776,9 +11776,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Random-Forest">Random Forest<a class="anchor-link" href="#Random-Forest">&#182;</a></h1><p><br><br>
-Random Forest is an ensembble method that uses bagging (bootstrap aggregating). Various CART models are built and they are averaged, or perhaps majority voting is used (see note below), to arrive at the estimate. 
-$$\hat{y}(\vec{x}) = \underset{c}{\mathrm{argmax}}\quad\sum_{b=1}^B(\hat{y}^{(b)} = c)$$
-where the classification of a region is done by vote, $\hat{y}$ is the winning class<br><br></p>
+Random Forest is an ensembble method that uses bagging (bootstrap aggregating). Various CART models are built and they are averaged, or perhaps majority voting is used to arrive at the estimate.</p>
 <p>It helps to first consider what are the pros and cons of Decision Trees:<br></p>
 <ul>
 <li>Pros<ul>
@@ -11799,23 +11797,26 @@ where the classification of a region is done by vote, $\hat{y}$ is the winning c
 </ul>
 <p>Random Forest reduces the variance of the estimates and this is accomplished by two aspects of RF that are described below.<br></p>
 <ul>
-<li>Draw many data sets D_training with replacement<ul>
-<li>This gives rise to a single CART, $T_m, m \in [1,M]$, and an estimate $\hat{f_m}(x)$  <ul>
-<li>This is called bagging (bootstrap aggregation)</li>
-<li>Here you have highly correlated samples and this to a small degree reduces variance</li>
-</ul>
-</li>
-</ul>
-</li>
+<li>Draw many data sets D_training with replacement</li>
 <li>Before splitting region $R_m$ select a random subset of features, d, where d &lt; D (D is the full set of features)<ul>
 <li>select the best feature in d to threshold<ul>
-<li>Here the similarity between trees is much smaller </li>
-<li>When the trees are averaged or voted on, this low similarity reduces variance by considerably more than bagging</li>
+<li>Here the similarity between trees is small</li>
+<li>When the trees are averaged or voted on, this low similarity reduces variance considerably</li>
 </ul>
 </li>
+<li>This gives rise to a single CART, $T_m, m \in [1,M]$, and an estimate $\hat{f_m}(x)$  </li>
 </ul>
 </li>
-<li>Final step averages all of the trees to arrive at an estimate. Voting can also be used instead of averaging.</li>
+<li>Final step averages all of the trees to arrive at an estimate. Voting can also be used instead of averaging.<ul>
+<li>For regression the result is $$\hat{f}(x) = \frac{1}{M}\sum_{m=1}^M \hat{f_m}(x) $$<ul>
+<li>This is referred to as bagging </li>
+<li>This averaging is one of the ways the Random Forests reduce variance</li>
+</ul>
+</li>
+<li>For classification the result is $$\hat{y}(\vec{x}) = \underset{c}{\mathrm{argmax}}\quad\sum_{b=1}^B(\hat{y}^{(b)} = c)$$
+<br>where the classification of a region is done by vote, $\hat{y}$ is the winning class<br><br></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -11887,9 +11888,8 @@ Random Forest: Test set accuracy (% correct) when max_depth = 50: 0.596
 Note how the RF is betwer than the Decision Tree, albeit by a small margin. Even with a higher depth the results are better than the Decision Tree. 
 <br></p>
 <h1 id="Take-away">Take away<a class="anchor-link" href="#Take-away">&#182;</a></h1><ul>
-<li>CART is a Decision Tree</li>
-<li>CART makes use of binary decisions </li>
-<li>CART can be improved by pruning</li>
+<li>Random forest is an ensemble method that averages the results of many decision trees (CART)</li>
+<li>Random forest reduces variance due to the averaging and bagging calculations</li>
 </ul>
 
 </div>
