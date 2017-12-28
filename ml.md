@@ -22,7 +22,7 @@ There are various ways to categorize machine learning methods but a common way t
   * [Support Vector Machine (SVM)](/website/notebooks/svm.html)
   * [Ensemble Methods](https://www.analyticsvidhya.com/blog/2015/09/questions-ensemble-modeling/)
     * [Random Forest](/website/notebooks/random-forest.html)
-    * Boosting
+    * [Boosting using AdaBoost](/website/notebooks/boosting.html) 
   * [Sample machine learning on a house sale price data set](/website/notebooks/ml_house_sale_price.html)
 * **Semi-supervised Learning** - use some labeled data to train your algorithm. Use unlabeled data to possibly infer even more information such as distribution of classes
 * **Unsupervised Learning** - tries to find some sort of structure in the data. Depends heavily on similarity (ex: distance) and dissimilarity measures (ex: inverse distance)
