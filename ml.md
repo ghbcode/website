@@ -34,16 +34,6 @@ There are various ways to categorize machine learning methods but a common way t
 Long Version
 * 15 bias – variance, overfitting (variance), lebesge
 * 20: p-norms, Bridge regression is the family of penalized regressions (where Lasso is gamma=1, ridge is gamma=2), Validation and test set with very good E_out and bounding math. AML chapter 4.3 and on has good material on this
-* 22: Very thorough analysis of CART
-* 23: 1st page has a very good pros/cons on CART. Random forest is an averaging over individual trees to get better results. 
-  * Pseudo algorithm. 
-    * Some part is a Bagging (or bootstrap aggregating) procedure. Reduces variance (see averaging function)
-    * correlation of the trees is small/er and this also reduces variance
-    * formulas for regression and classification provided
-* 24: Boosting, another adaptive basis-function model
-  * a weak learner that can classify entire feature space 
-  * Objective function of AdaBoost provided
-    * uses exponential loss as the base to find the argmin Lec24p5
 * 25: Semi-supervised learning
   * inductive - supervised learning, i.e. learn from labeled data
   * transductive semi-supervised learning- predict the labels on the unlabeled instances of the training data.
