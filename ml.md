@@ -10,6 +10,11 @@ Each topic is covered within a self contained python notebook. In some cases the
 There are various ways to categorize machine learning methods but a common way to think about it is via the following  categories, i.e. supervised learning, semi-supervised learning and unsupervised learning. Note that there is another distinction, whether your output is a real-valued number or some sort of classification. Classification can also contain probability measure as in, 'input X is of class A with a probability of 80%'. Other ways to think of machine learning involve categorizing the methods used by the models or the general idea that the model is using. For now I will use the former method to categorize and list machine learning algorithms.
 
 * **Supervised Learning** - use labeled data to train your algorithm
+  * [Data Processing and Preliminaries](/website/notebooks/data-processing-preliminaries.html)
+    * Data Splitting/Partitioning
+    * K-fold cross validation
+    * Data pre-processing
+    * Other topics
   * [Bayes, MLE and MAP Preliminaries](/website/notebooks/Bayes-MLE-MAP.html)
   * [Linear Regression using Ordinary Least Squares and the Normal Equation](/website/notebooks/linear-regression-ols-normal-equation.html), 
   * Linear Regression with Regularization
