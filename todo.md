@@ -1,5 +1,4 @@
 - ML
-  - finish main page
   - finish SSL
   - finish USL (pca, knn)
 - Math
@@ -7,4 +6,4 @@
   - clean up the other posts
 - Python
   - (pdb, profile/timing, structure like a package, unit tests, tensorflow)
-- block stuff (trading, ethereum programming)
+- block stuff (trading, ethereum programming
