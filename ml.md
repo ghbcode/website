@@ -29,38 +29,23 @@ There are various ways to categorize machine learning methods but a common way t
     * [Random Forest](/website/notebooks/random-forest.html)
     * [Boosting using AdaBoost](/website/notebooks/boosting.html) 
   * [Sample machine learning on a house sale price data set](/website/notebooks/ml_house_sale_price.html)
-* **Semi-supervised Learning** - use some labeled data to train your algorithm. Use unlabeled data to possibly infer even more information such as distribution of classes
-* **Unsupervised Learning** - tries to find some sort of structure in the data. Depends heavily on similarity (ex: distance) and dissimilarity measures (ex: inverse distance)
-  * PCA
-  * k-Nearest Neighbor
-  * https://sdsawtelle.github.io/blog/output/week8-andrew-ng-machine-learning-with-python.html
-
-
-Long Version
-* 15 bias – variance, overfitting (variance), lebesge
-* 20: p-norms, Bridge regression is the family of penalized regressions (where Lasso is gamma=1, ridge is gamma=2), Validation and test set with very good E_out and bounding math. AML chapter 4.3 and on has good material on this
-* 25: Semi-supervised learning
+* **Semi-supervised Learning** - use labeled data to train your algorithm the same as supervised learning. Use unlabeled data to possibly infer more information such as distribution of classes
   * inductive - supervised learning, i.e. learn from labeled data
   * transductive semi-supervised learning- predict the labels on the unlabeled instances of the training data.
   * Self training algo: use labeled data to find f_hat, then using f_hat label unlabeled data
   * propagating 1-NN
   * Mixture models
     * Great video: https://www.youtube.com/watch?v=REypj2sy_5U&list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt
-* 26: More mixture models and then EM (expectation maximization)
   * Great video: https://www.youtube.com/watch?v=iQoXFmbXRJA&index=2&list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt
   * Page 4 shows difficulty in mixture models and reason for EM
   * Page 5 shows use of EM (find missing data, find MLE, estimate quantities in mixture models)
   * Shows entire derivation of E and M steps
-* 27: Unsupervised learning : first page has good uses 
-  * data clustering or grouping (helps find features or centroids)
-  * Based on similarity or dissimilarity measures
-    * euclidean distance (x-y)^2, l1 norm |x-y|
-    * for categorical features it can be the Hamming distance (number of features that are different between x and y
-    * a couple of other measures
+* **Unsupervised Learning** - tries to find some sort of structure in the data. Depends heavily on similarity (ex: distance) and/or dissimilarity measures (ex: inverse distance)
+  * PCA
+  * k-Nearest Neighbor
+  * https://sdsawtelle.github.io/blog/output/week8-andrew-ng-machine-learning-with-python.html
   * hierarchical graphical clustering 
   * aglomerative hierarchical clustering 
     * dendogram
-* 28: aglomerative hierarchical clustering 
-  * useful measures
   * NN algorithm
   * Farthest Neighbor algorithm
