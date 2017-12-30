@@ -29,11 +29,8 @@ There are various ways to categorize machine learning methods but a common way t
     * [Random Forest](/website/notebooks/random-forest.html)
     * [Boosting using AdaBoost](/website/notebooks/boosting.html) 
   * [Sample machine learning on a house sale price data set](/website/notebooks/ml_house_sale_price.html)
-* **Semi-supervised Learning** - use labeled data to train your algorithm the same as supervised learning. Use unlabeled data to possibly infer more information such as distribution of classes
-  * inductive - supervised learning, i.e. learn from labeled data
-  * transductive semi-supervised learning- predict the labels on the unlabeled instances of the training data.
-  * Self training algo: use labeled data to find f_hat, then using f_hat label unlabeled data
-  * propagating 1-NN
+* **Semi-supervised Learning** - many times acquiring labeled data is either expensive or impractical. So you use the labeled data to train your algorithm as you would with supervised learning. And you use the unlabeled data to possibly infer more information and therefore increase the predictive strength of your model.
+  * [More on Semi-Supervised Learning](/website/notebooks/ssl.hmtl)
   * Mixture models
     * Great video: https://www.youtube.com/watch?v=REypj2sy_5U&list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt
   * Great video: https://www.youtube.com/watch?v=iQoXFmbXRJA&index=2&list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt
