@@ -3,6 +3,7 @@
   - finish USL (pca, knn)
 - Math
   - add n-1 post
+  - add the ml notes on likelihood probabilities
   - clean up the other posts
 - Python
   - (pdb, profile/timing, structure like a package, unit tests, tensorflow)
