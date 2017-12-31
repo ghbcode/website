@@ -3,6 +3,7 @@
 - Math
   - add n-1 post
   - add the ml notes on likelihood probabilities
+  - link to PCA
   - clean up the other posts
 - Python
   - (pdb, profile/timing, structure like a package, unit tests, tensorflow)
