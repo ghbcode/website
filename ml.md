@@ -34,6 +34,7 @@ There are various ways to categorize machine learning methods but a common way t
   * [Mixture models](/website/notebooks/ssl.html#Mixture-Models)
   * [Expectation Maximization](/website/notebooks/ssl.html#Expectation-Maximization)
 * **Unsupervised Learning** - tries to find some sort of structure in the data. Depends heavily on similarity (ex: distance) and/or dissimilarity measures (ex: inverse distance)
-  * [More on Unsupervised Learning](/website/notebooks/ul.html)
-  * PCA
+  * [More on Unsupervised Learning](/website/notebooks/usl.html)
+  * [PCA to reduce dimensionality](/website/noebooks/pcs.html)
+  * [K-Means to find subsets in the data](/website/noebooks/kmeans.html)
 
