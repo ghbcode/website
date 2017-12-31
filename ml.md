@@ -31,8 +31,8 @@ There are various ways to categorize machine learning methods but a common way t
   * [Sample machine learning on a house sale price data set](/website/notebooks/ml_house_sale_price.html)
 * **Semi-supervised Learning** - many times acquiring labeled data is either expensive or impractical. So you use the labeled data to train your algorithm as you would with supervised learning. And you use the unlabeled data to possibly infer more information and therefore increase the predictive strength of your model.
   * [More on Semi-Supervised Learning](/website/notebooks/ssl.html)
-  * [Mixture models](/website/notebooks/ssl.html#Mixture-models)
-  * [Expectation Maximization](/website/notebooks/ssl.html#Expectation-maximization)
+  * [Mixture models](/website/notebooks/ssl.html#Mixture-Models)
+  * [Expectation Maximization](/website/notebooks/ssl.html#Expectation-Maximization)
 * **Unsupervised Learning** - tries to find some sort of structure in the data. Depends heavily on similarity (ex: distance) and/or dissimilarity measures (ex: inverse distance)
   * [More on Unsupervised Learning](/website/notebooks/ul.html)
   * PCA
