@@ -11792,35 +11792,85 @@ When you have labeled and unlabeled data you might as well use the unlabeled dat
 <li><strong>transductive</strong> - predicts the labels on the unlabeled instances of the training data. So it learns $\hat{y_j} = \hat{f}(x_j \forall x_j \in D_U)$
 <br></li>
 </ul>
-<h3 id="Self-training-algorithms">Self training algorithms<a class="anchor-link" href="#Self-training-algorithms">&#182;</a></h3><p>Use labeled data to find $\hat{f}(x^{(U)})$. Then use/consider $\hat{f}(x^{(U)})$ as "labeled" data. Some examples incluse:
+<h3 id="Self-training-algorithms">Self training algorithms<a class="anchor-link" href="#Self-training-algorithms">&#182;</a></h3><p>Use labeled data to find $\hat{f}(x^{(U)})$. Then use/consider $\hat{f}(x^{(U)})$ as "labeled" data. Some examples include:
 <br></p>
 <ul>
-<li><strong>Self training algorithm</strong> - Basically the algorithm takes the strongest estimate(s) in the unlabeled data and moves it(them) to the labeled that set, thereby iteratively increasing the labeled data set. </li>
+<li><strong>Self training algorithm</strong> - The algorithm takes the highest confidence estimate(s) in the unlabeled data and moves it(them) to the labeled data set, thereby iteratively increasing the labeled data set. </li>
 <li><strong>Propagating 1-NN</strong> - Use a distance function to iteratively merge the unlabeled data to the labeled data set.<ul>
+<li>If you imagine labeled and unlabeled points in 2D, this algorithm operates on the closest pair consisting of an unlabled and a labeled point. The unlabeled data point is absorbed into the labeled set and the process repeats.</li>
 <li>This algorithm works well when the data is dense and well seprated for each class. 
 <br><br></li>
 </ul>
 </li>
 </ul>
-<h3 id="Mixture-Models">Mixture Models<a class="anchor-link" href="#Mixture-Models">&#182;</a></h3><p>Note that <a href="https://www.youtube.com/watch?v=REypj2sy_5U&amp;list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt">the following video</a> has a great explanation of mixture models and their use. Recall that there are (at least) two types of clustering methods. You have hard clustering where an element either belongs to a cluster or not. And then you have soft clustering where an element may be associated with different clusters albeit with differing degrees of confidence.
-<br></p>
+<h3 id="Mixture-Models">Mixture Models<a class="anchor-link" href="#Mixture-Models">&#182;</a></h3><p>Note that <a href="https://www.youtube.com/watch?v=REypj2sy_5U&amp;list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt">the following video</a> has a great explanation of mixture models and their use. Recall that there are (at least) two types of clustering methods.</p>
 <ul>
-<li>Mixture models are a probabilistically sound way of doing soft clustering<ul>
-<li>each cluster corresponds to a generative model, i.e. $p(x|y) = N(x|\mu_y, \sum_y)$ where y is the class index</li>
-<li>we model $p(x|y)$ as a generative model, i.e. $p(x) = \sum_{y'} p(x|y')p(y')$ which is called a "mixture density"</li>
-<li>one way to solve would be via the MLE
-$$\hat{\theta} = \underset{\theta}{\mathrm{argmax}}\quad p(D|\theta)\\
-= \underset{\theta}{\mathrm{argmax}} ln(p(D|\theta)\\
-= \underset{\theta}{\mathrm{argmax}} \sum_{i=1}^{l} ln[p(x_i|y_i, \theta)p(y_i| \theta)]$$
-<br><br></li>
+<li>You have hard clustering where an element either belongs to a cluster or not. </li>
+<li>You have soft clustering where an element may be associated with different clusters albeit with differing degrees of confidence.
+<br></li>
 </ul>
+<p>So given data that has a higher kurtosis than the Gaussian distribution or if it appears multimodal, then chances are that the data is comprised of multiple classes. Mixture models are a probabilistically sound way of doing soft clustering with the Gaussian Mixture Model (GMM) being a common choice.
+<img src="multimodal.jpg" alt="multimodal distribution">
+<br></p>
+<p>Goal: We want to find $p(y|\underline{x})$<br>
+Process:</p>
+<ul>
+<li><p>Model each class as a specified density with unknown parameters
+$$p(\underline{x},y|\underline{\theta}) = p(\underline{x}|y,\underline{\theta})p(y|\underline{\theta})\\
+= p(\underline{x}|y,\underline{\theta})p(y)\\
+= \text{class-conditional density * prior}$$
+<br></p>
+</li>
+<li><p>for the labeled data we have $p(\underline{x}|y=1,\underline{\theta})$ and $p(\underline{x}|y=2,\underline{\theta})$
+<br>
+<img src="mixture-model.jpg" alt="mixture model">
+<br></p>
+</li>
+<li><p>but for the unlabeled data you know know the class for y so we have
+$$p(\underline{x}|\underline{\theta}) = \sum_{y=1}^C p(\underline{x}|y,\underline{\theta})p(y|\underline{\theta})\\
+=\sum_{y=1}^C p(\underline{x}|y,\underline{\theta})p(y)\\
+= \text{component densities * mixing parameters}
+$$
+<br></p>
 </li>
 </ul>
-<h3 id="Expectation-maximization">Expectation maximization<a class="anchor-link" href="#Expectation-maximization">&#182;</a></h3><p>Uses:</p>
+<p>Here $p(\underline{x}|\underline{\theta})$ is a mixture density. But how do we use the labeled and unlabeled data together? We can find $\underline{\theta}$ from the data using MLE. 
+<br>
+$$\hat{\theta_{MLE}} = \underset{\theta}{\mathrm{argmax}}\quad p(D|\theta)\\
+= \underset{\theta}{\mathrm{argmax}} \space ln[p(D|\theta)]\\
+= \underset{\theta}{\mathrm{argmax}} \sum_{i=1}^{l} ln[p(x_i,y_i|\theta)] + \sum_{i=l+1}^{l+u} ln[p(x_i|\theta]\\
+= \underset{\theta}{\mathrm{argmax}} \sum_{i=1}^{l} ln[p(x_i|y_i\theta) + ln[p(y_i)] + \sum_{i=l+1}^{l+u} ln[\sum_{y=1}^C p(\underline{x}|y,\underline{\theta})p(y)]
+$$
+<br>
+where:<br></p>
+<ul>
+<li>the labeled data goes from i=1 to l, and the unlabeled data goes from i=l+1 to l+u</li>
+<li>$ p(y_i|\theta)=p(y_i)$ since $\theta$ doesn't give you information about y </li>
+<li>remember that for the unlabeled data $p(\underline{x}|\underline{\theta})=\sum_{y=1}^C p(\underline{x}|y,\underline{\theta})p(y)$
+<br></li>
+</ul>
+<p>Finally, remember that the classes as well as the parameters $\underline{\theta}$ are unknown and that you need one to estimate the other. So how do you estimtate the classes and the parameters? That is where expectation maximization (EM) comes into the picture.
+<br></p>
+<h3 id="Expectation-maximization">Expectation maximization<a class="anchor-link" href="#Expectation-maximization">&#182;</a></h3><p>Let's begin by listing below the comon uses for EM. Note that the second one is exactly what we are trying to figure out in the mixture model above.</p>
 <ul>
 <li>Finding missing data</li>
 <li>Find MLE in difficult situations</li>
-<li>Estimate quantities in mixture models</li>
+<li>Estimate quantities in mixture models
+<br></li>
+</ul>
+<p>Let <em>D</em> be all of the data where <em>D</em> = {$(x_i,y_i), i=1,2,...,l; x_h, h=l+1, l+2,...,l+u$} and <em>H</em> = {$y_h, h=l+1, l+2,...,l+u$} are the 'hidden' labels. Here is how the EM algorithm works:</p>
+<ol>
+<li>initialize t=0 (iteration index) and $\underline{\theta}^0$. Theta from the labeled data is a good starting point for $\underline{\theta}^0$</li>
+<li>Compute the best estimate of <em>H</em> as $p(H|D, \underline{\theta}^{(t)})$</li>
+<li>Estimate parameter $\underline{\theta}^{(t+1)}$ by 
+ $$\theta^{(t+1)} = \underset{\theta}{\mathrm{argmax}} \quad E_{H|D,\underline{\theta^{(t)}}}\{ ln[p(D,H|\underline{\theta}]\} $$
+<br></li>
+</ol>
+<p>where steps 2 and 3 are repeated in succession until convergence is reached or a halting condition is reached. Note that EM has the following properties:<br></p>
+<ul>
+<li>Can be shown that p(D|$\theta$) increases at each iteration</li>
+<li>Converges to <strong>local optimum</strong></li>
+<li>The result depends on the starting point of $\underline{\theta}^0$. As mentioned previously, a common choice is $\hat{\underline{\theta}}_{MLE}$ using the labeled data set.</li>
 </ul>
 
 </div>
@@ -11830,8 +11880,8 @@ $$\hat{\theta} = \underset{\theta}{\mathrm{argmax}}\quad p(D|\theta)\\
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Take-Away">Take Away<a class="anchor-link" href="#Take-Away">&#182;</a></h3><ul>
-<li>Great video: <a href="https://www.youtube.com/watch?v=iQoXFmbXRJA&amp;index=2&amp;list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt">https://www.youtube.com/watch?v=iQoXFmbXRJA&amp;index=2&amp;list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt</a></li>
+<h3 id="Resources">Resources<a class="anchor-link" href="#Resources">&#182;</a></h3><ul>
+<li>Great video on EM: <a href="https://www.youtube.com/watch?v=iQoXFmbXRJA&amp;index=2&amp;list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt">https://www.youtube.com/watch?v=iQoXFmbXRJA&amp;index=2&amp;list=PLBv09BD7ez_4e9LtmK626Evn1ion6ynrt</a></li>
 </ul>
 
 </div>
