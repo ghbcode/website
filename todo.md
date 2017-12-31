@@ -1,5 +1,4 @@
 - ML
-  - finish SSL
   - finish USL (pca, knn)
 - Math
   - add n-1 post
