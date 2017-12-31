@@ -1,5 +1,5 @@
 - ML
-  - finish USL (pca, knn)
+  - finish pca and k-means
 - Math
   - add n-1 post
   - add the ml notes on likelihood probabilities
@@ -7,4 +7,4 @@
   - clean up the other posts
 - Python
   - (pdb, profile/timing, structure like a package, unit tests, tensorflow)
-- block stuff (trading, ethereum programming
+- block stuff (trading, ethereum programmin
