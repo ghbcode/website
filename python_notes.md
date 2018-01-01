@@ -8,11 +8,11 @@ Data queries
   - [Fetch FRED data via fredapi](/website/notebooks/FRED-download.html)
   - [Fetch Quandl data](/website/notebooks/Quandl-download.html)
 
-Troubleshooting, timing and profiling
-  - [Troubleshoot using pdb](/website/notebooks/troubleshoot-with-pdb.html)
-  - [Timing your code](/website/notebooks/time-your-code.html)
-  - [How to profile your code](/website/notebooks/profile-your-code.html)
-    - http://mortada.net/easily-profile-python-code-in-jupyter.html
+Troubleshooting Code - timing, profiling and tracing
+  - [Timing your code](/website/notebooks/troubleshooting-code.html)
+   - [How to profile your code](/website/notebooks/troubleshooting-code.html#Profiling-Code)
+  - [Troubleshoot using pdb](/website/notebooks/troubleshooting-code.html#Tracing-Code)
+
 
 Other topics
 * [virtual environments](virtual-environments.md)
