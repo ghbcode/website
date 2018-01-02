@@ -11775,7 +11775,10 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Rolling-Correlation">Rolling Correlation<a class="anchor-link" href="#Rolling-Correlation">&#182;</a></h1><p>Correlation is one way to look at the co-movement between two time series. Since this relationship is constantly changing, you can use the rolling correlation to view this change. Below you can see the rolling correclation between the percentage change in daily returns for microsoft and apple.</p>
+<h1 id="Rolling-Correlation">Rolling Correlation<a class="anchor-link" href="#Rolling-Correlation">&#182;</a></h1><p>Correlation is one way to look at the co-movement between two time series. Since this relationship is constantly changing, you can use the rolling correlation to view this change. Below you can see the rolling correclation between the percentage change in daily returns for microsoft and apple. 
+<br></p>
+<p>$$corr(X,Y) = \frac{cov(X,Y)}{\sigma_x\sigma_y} \\
+= \frac{\sum_{i=1}^{N}(x_i - \bar{x})(y_i - \bar{y})}{(N-1)\sigma_x\sigma_y}$$</p>
 
 </div>
 </div>
