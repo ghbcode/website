@@ -2,9 +2,8 @@
   - finish pca and k-means
 - Math
   - add n-1 post
-  - add the ml notes on likelihood probabilities
   - link to PCA
   - clean up the other posts
 - Python
-  - (pdb, profile/timing, structure like a package, unit tests, tensorflow)
+  - (vectorization, structure like a package, unit tests, tensorflow)
 - block stuff (trading, ethereum programmin
