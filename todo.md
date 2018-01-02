@@ -5,5 +5,5 @@
   - link to PCA
   - clean up the other posts
 - Python
-  - (vectorization, structure like a package, unit tests, tensorflow)
-- block stuff (trading, ethereum programmin
+  - (structure like a package, unit tests, tensorflow)
+- block stuff (trading, ethereum programming)
