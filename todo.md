@@ -1,7 +1,6 @@
 - ML
   - finish pca and k-means
 - Math
-  - add n-1 post
   - link to PCA
   - clean up the other posts
 - Python
