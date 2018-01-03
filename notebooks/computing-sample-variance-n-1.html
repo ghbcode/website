@@ -12506,14 +12506,26 @@ RK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="So-what-is-the-Math-behind-this?">So what is the Math behind this?<a class="anchor-link" href="#So-what-is-the-Math-behind-this?">&#182;</a></h3><p>Below is the mathematical proof to show that dividing by $(n-1)$ provides the unbiased estimate of the variance. Basically we need to show that expected value of the sample variance is indeed the population variance, i.e. $\sigma^2$:
+<h3 id="So-what-is-the-Math-behind-this?">So what is the Math behind this?<a class="anchor-link" href="#So-what-is-the-Math-behind-this?">&#182;</a></h3><p>Below is the mathematical proof to show that dividing by $(n-1)$ provides the unbiased estimate of the variance. Basically we need to show that expected value of the sample variance is indeed the population variance, i.e. $E(s^2) = \sigma^2$:
 \begin{equation}
     E(s^2) = E\left(\frac{1}{n - 1} \sum_{i=1}^{n} (s_i - \bar{s})^2\right) = \sigma^2
 \end{equation}
 <br></p>
-<p>Using the various properties of variance and expectation:<br></p>
+<p>Using the various properties of variance and expectation that follow carry on with the derivation. What I consider important is the term in red below:<br></p>
+<p>\begin{equation}
+\left\{
+\begin{aligned}
+    &amp; Var(aX) = a^2 Var(X), \text{for any X} \\
+    &amp; Var(X + Y) =  Var(X) + Var(Y), \text{if X and Y are independent} \\
+    &amp; Var(X) = E[(X - E(X))^2] = E(X^2 - \color{red}{2XE(X)} + E(X)^2) = E(X^2) - 2\color{red}{E[XE(X)]} + E[E(X)^2)] \\
+    &amp; = E(X^2) - 2\color{red}{E(X)E(X)} + E(X)^2 = E(X^2) - E(X)^2\\
+    &amp; \therefore E(X^2) = \text{Var}(X) + E(X)^2
+\end{aligned}
+\right.
+\end{equation}
+<br></p>
 <p>\begin{aligned}
-    E(s^2) = E\left(\frac{1}{n - 1} \sum_{i=1}^{n} (s_i - \bar{s})^2\right) = &amp; \frac{1}{n - 1} E \left( \sum_{i=1}^{n} (s_i^2 - 2s_i\bar{s} + \bar{s}^2) \right) \\
+    E(s^2) = E\left(\frac{1}{n - 1} \sum_{i=1}^{n} (s_i - \bar{s})^2\right) = &amp; \frac{1}{n - 1} E \left( \sum_{i=1}^{n} (s_i^2 - \color{red}{2s_i\bar{s} + \bar{s}^2}) \right) \\
     = &amp; \ \frac{1}{n - 1} E \left( \sum_{i=1}^{n} s_i^2 - 2n\bar{s}^2 + n\bar{s}^2 \right) \\
     = &amp; \ \frac{1}{n - 1} E \left( \sum_{i=1}^{n} s_i^2 - n\bar{s}^2 \right) \\
     = &amp; \ \frac{1}{n - 1} \left[ E \left( \sum_{i=1}^{n} s_i^2 \right) - E \left( n\bar{s}^2 \right) \right] \\
@@ -12528,7 +12540,7 @@ RK5CYII=
 \end{aligned}
 <br></p>
 <p>\begin{aligned}
-    E(\bar{S}^2) = &amp; \ Var(\bar{S}) + E(\bar{S})^2 \\
+    E(\bar{s}^2) = &amp; \ Var(\bar{s}) + E(\bar{s})^2 \\
     = &amp; Var(\frac{1}{n} \sum_{i=1}^{n} s_i) + \mu ^2 \\
     = &amp; \frac{1}{n^2} Var(\sum_{i=1}^{n} s_i) + \mu ^2 \\
     = &amp; \frac{1}{n^2} \sum_{i=1}^{n} Var(s_i) + \mu ^2, \text{ since all } s_i\text{'s are independent} \\
@@ -12541,6 +12553,7 @@ RK5CYII=
     E(s^2) = &amp; \ \frac{1}{n-1} \left[ \sum_{i=1}^{n} E \left( s_i^2 \right) - n E \left(\bar{s}^2 \right) \right] \\
     = &amp; \ \frac{1}{n-1} \left[n \sigma^2 + n \mu ^2 - n \left( \frac{1}{n} \sigma^2 + \mu ^2 \right) \right] \\
     = &amp; \ \frac{1}{n-1} \left[n \sigma^2 + n \mu ^2 - \sigma^2 - n \mu ^2 \right] \\
+    = &amp; \ \frac{1}{n-1} \left[(n - 1)\sigma^2 \right] \\
     = &amp; \ \sigma^2 \\
 \end{aligned}
 <br></p>
