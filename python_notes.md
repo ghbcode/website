@@ -9,8 +9,8 @@ Data queries
   - [Fetch Quandl data](/website/notebooks/Quandl-download.html)
 
 Troubleshooting Code - timing, profiling and tracing
-  - [Timing your code](/website/notebooks/troubleshooting-code.html)
-   - [How to profile your code](/website/notebooks/troubleshooting-code.html#Profiling-Code)
+  - [Timing your code](/website/notebooks/Profiling-code.html)
+  - [How to profile your code](/website/notebooks/troubleshooting-code.html#Profiling-Code)
   - [Troubleshoot using pdb](/website/notebooks/troubleshooting-code.html#Tracing-Code)
 
 
