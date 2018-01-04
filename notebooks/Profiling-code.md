@@ -1,4 +1,8 @@
-
+---
+layout: default
+title: Profiling, Timing and Troubleshooting Code
+description: posted by ghbcode on 2013/07/19
+---
 # Troubleshooting Code - timing, profiling and tracing
 <br>
 If you are using an IDE such as Eclipse to debug your code then you have a rich set of tools at your disposal. If you are working in the terminal or in Jupyter then here are some useful tools to help you troubleshoot your code. Below is the function called "run_experiment" that computes the eigenvalues of a K x K input matrix. Before we get started though, you may have to install the following packages.
