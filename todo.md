@@ -24,3 +24,15 @@
   >"""Returns the square root of self times self."""
   >For a function or class, the leading comment block is a programmer’s note. 
   >The docstring describes the operation of the  function or class:
+
+* How to get .md to work with site:
+1. make .md headers as follows. Titles have to be at most the [//]: # ## level
+[//]: # ---
+[//]: # layout: default
+[//]: # title: Python Notes
+[//]: # description: posted by ghbcode on 2013/07/19
+[//]: # ---
+[//]: # ## Troubleshooting Code - timing, profiling and tracing
+titles to all be at most ## level. If you make the title #title then that permeates to your header title
+2. download notebook as .md
+3. edit 
