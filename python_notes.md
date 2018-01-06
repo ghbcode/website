@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Notes and samples on Python Topics
+title: Notes and Samples on Python Topics
 description: posted by ghbcode on 2015/01/17
 ---
 
@@ -10,13 +10,13 @@ Data queries
 
 Troubleshooting Code - timing, profiling and tracing
   - [Timing your code](/website/notebooks/Profiling-code.html)
-  - [How to profile your code](/website/notebooks/troubleshooting-code.html#Profiling-Code)
-  - [Troubleshoot using pdb](/website/notebooks/troubleshooting-code.html#Tracing-Code)
+  - [How to profile your code](/website/notebooks/Profiling-code.html#Profiling-Code)
+  - [Troubleshoot using pdb](/website/notebooks/Profiling-code.html#Tracing-Code)
 
 
 Other topics
-* [Virtual environments](virtual-environments.md)
-* [Vectorized code for performance improvements](/website/notebooks/vectorized-code.html)
+* [Virtual environments](/website/notebooks/virtual-environments.md)
+* [Vectorized code for performance improvements](/website/notebooks/vectorized-code.md)
 * structure code like a package
 * Tensor flow: TensorFlow is an open-source software library for dataflow programming across a range of tasks. It is a symbolic math library, and also used for machine learning applications such as neural networks.
 * Unit Testing
