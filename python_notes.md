@@ -10,8 +10,8 @@ Data queries
 
 Troubleshooting Code - timing, profiling and tracing
   - [Timing your code](/website/notebooks/Profiling-code.html)
-  - [How to profile your code](/website/notebooks/Profiling-code.html#profiling-Code)
-  - [Troubleshoot using pdb](/website/notebooks/Profiling-code.html#tracing-Code)
+  - [How to profile your code](/website/notebooks/Profiling-code.html#profiling-code)
+  - [Troubleshoot using pdb](/website/notebooks/Profiling-code.html#tracing-code)
 
 
 Other topics
