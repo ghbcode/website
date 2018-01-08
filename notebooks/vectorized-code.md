@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Notes and samples on Python Topics
+title: Notes and Samples on Python Topics
 description: posted by ghbcode on 2015/01/12
 ---
 
