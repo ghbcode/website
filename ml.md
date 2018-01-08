@@ -35,6 +35,6 @@ There are various ways to categorize machine learning methods but a common way t
   * [Expectation Maximization](/website/notebooks/ssl.html#Expectation-Maximization)
 * **Unsupervised Learning** - tries to find some sort of structure in the data. Depends heavily on similarity (ex: distance) and/or dissimilarity measures (ex: inverse distance)
   * [More on Unsupervised Learning](/website/notebooks/usl.html)
-  * [PCA to reduce dimensionality](/website/noebooks/pca.html)
-  * [K-Means to find subsets in the data](/website/noebooks/k-means.html)
+  * [PCA to reduce dimensionality](/website/notebooks/pca.html)
+  * [K-Means to find subsets in the data](/website/notebooks/k-means.html)
 
