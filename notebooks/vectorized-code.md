@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: Notes and samples on Python Topics
