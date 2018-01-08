@@ -7,10 +7,18 @@ description: posted by ghbcode on 2015/01/17
 <br>
 If you haven't heard of venv or the like I highly recommend that you look into them. What venv allows you to do is to create separtate environments usually with different settings and installed software. For example, you can have Python 2.7 installed in your machine and use venv to use Python 3.x. In windows the inner workings of venv may be more complicated, however, in Linux the 'trick' is simply that your environment variables are updated to reflect the installations in a particular folder. On my machine I'm running python 3.x inside of /Users/myusername/venvp3 so that if you output my \$PYTHONPATH you get:<br>
 <br>
+
+``` python
     > /usr/local/lib/python2.7/site-packages
+```
+
 <br><br>
 However, if you activated my venv in ~/venvp3 and then you output my \$PYTHONPATH you would get:<br><br>
+
+``` python
     > /Users/username/venvp3/lib/python3.5/site-packages
+```    
+
 <br><br>
 It is really as simple as that, in short:<br>
 - you go to the folder that is your particular venv
