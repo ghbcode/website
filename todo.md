@@ -25,6 +25,8 @@
   >For a function or class, the leading comment block is a programmer’s note. 
   >The docstring describes the operation of the  function or class:
 
+https://mubaris.com/2017/09/28/linear-regression-from-scratch/
+
 * How to get .md to work with site:
 1. make .md headers as follows. Titles have to be at most the ## level else they permeate to the header title
 <!--
