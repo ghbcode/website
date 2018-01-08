@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Python Notes
+title: Notes and Samples on Python Topics
 description: posted by ghbcode on 2013/07/19
 ---
 ## Troubleshooting Code - timing, profiling and tracing
