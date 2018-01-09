@@ -8,7 +8,9 @@
 * structure code like a package
   * https://sdsawtelle.github.io/blog/output/data-science-project-standard-cookiecutter-structure.html
 * tensor flow: TensorFlow is an open-source software library for dataflow programming across a range of tasks. It is a symbolic math library, and also used for machine learning applications such as neural networks.
+  * https://mubaris.com/2017/10/21/tensorflow-101/
   * http://sdsawtelle.github.io/blog/output/getting-started-with-tensorflow-in-jupyter.html
+* Unit Tests
 * regex
   * https://sdsawtelle.github.io/blog/output/regular-expressions-in-python.html
 * iterators
@@ -23,7 +25,6 @@
   >For a function or class, the leading comment block is a programmer’s note. 
   >The docstring describes the operation of the  function or class:
 
-https://mubaris.com/2017/09/28/linear-regression-from-scratch/
 
 * How to get .md to work with site:
 1. make .md headers as follows. Titles have to be at most the ## level else they permeate to the header title
