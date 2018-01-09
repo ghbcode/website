@@ -17,5 +17,5 @@ Troubleshooting Code - timing, profiling and tracing
 Other topics
 * [Virtual environments](/website/notebooks/virtual-environments.html)
 * [Vectorized code for performance improvements](/website/notebooks/vectorized-code.html)
-* How to structure code - like a package
+* [Considerations for writing code and packages](/website/notebooks/code-considerations.html)
 * Tensor flow: TensorFlow is an open-source software library for dataflow programming across a range of tasks. It is a symbolic math library, and also used for machine learning applications such as neural networks.
