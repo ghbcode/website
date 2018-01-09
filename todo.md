@@ -1,8 +1,6 @@
-- ML
-  - finish pca and k-means
 - Math
-  - link to PCA
   - clean up the other posts
+  - add posts with FBE 543
 - Python
   - (structure like a package, unit tests, tensorflow)
 - block stuff (trading, ethereum programming)
