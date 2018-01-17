@@ -8,6 +8,7 @@ As with the other sections this Math page contains various resources for my refe
 
 * [PDF of distributions](/website/notebooks/PDF-of-distributions.html)
 * [Plotting rolling correlation](/website/notebooks/Rolling-correlation.html) 
+* [Notes on Hypothesis Testing](/website/notebooks/hypothesis-testing.html) 
 * [Note on likelihood probabilities](/website/notebooks/Note-likelihood-probabilities.html)
 * [When computing sample variance why divide by n-1?](/website/notebooks/computing-sample-variance-n-1.html)
 * [GARCH 1,1](/website/notebooks/GARCH-1-1.html)
