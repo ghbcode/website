@@ -11793,12 +11793,12 @@ $$t = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}} = \frac{\bar{x} - 0.5}{\frac{s}{\
 </li>
 </ul>
 <h3 id="If-you-are-testing-between-two-sample-populations-and-you-want-to-do-the-following-tests:">If you are testing between two sample populations and you want to do the following tests:<a class="anchor-link" href="#If-you-are-testing-between-two-sample-populations-and-you-want-to-do-the-following-tests:">&#182;</a></h3><p><br>2. $H_0: \mu_1 = \mu_2$, $H_a: \mu_1 \ne \mu_2$ (Two tailed)
-<br>3. $H_a: \mu_1 \le \mu_2$, $H_a: \mu_1 \gt \mu_2$ (One tailed)
+<br>3. $H_0: \mu_1 \ge \mu_2$, i.e. $\mu_1 - \mu_2 \ge 0$, $H_a: \mu_1 \lt \mu_2$ (One tailed)
 <br></p>
-<p>If the variances are <strong>unequal</strong>, i.e. $\sigma_1^2 \ne \sigma_2^2$, $\color{red}{\text{if t-test}, df = n_1 + n_2 -2}$.
+<p>If the variances are <strong>unequal</strong>, i.e. $\sigma_1^2 \ne \sigma_2^2$, $\color{red}{\text{if t-test}, df \approx n_1 + n_2 -2}$.
 $$t_d (or\space z_d) = \frac{\bar{X_1}-\bar{X_2}}{\sqrt{\frac{S_1^2}{n_1}+\frac{S_2^2}{n_2}}}$$
 <br>
-If variances are <strong>equal</strong> then, $\color{red}{\text{if t-test}, df = n_1 + n_2 -2}$.
+If variances are <strong>equal</strong> then, $\color{red}{\text{if t-test}, df \approx n_1 + n_2 -2}$.
 <br>$$t_d (or\space z_d) = \frac{\bar{x_a}-\bar{x_b}}{\sqrt{S_p^2[\frac{1}{n_a}+\frac{1}{n_b}]}}, \quad S_p^2 = \frac{(n_a - 1)S_a^2 + (n_b - 1)S_b^2}{n_a + n_b - 2} $$
 <br><br>
 <strong>Note:</strong> You have to conduct an F-test to decide whether population variances are equal (unless explicitly told otherwise)
