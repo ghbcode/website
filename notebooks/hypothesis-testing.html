@@ -11784,14 +11784,6 @@ div#notebook {
 </ul>
 <h3 id="If-you-are-testing-a-sample-mean-to-an-actual-number:">If you are testing a sample mean to an actual number:<a class="anchor-link" href="#If-you-are-testing-a-sample-mean-to-an-actual-number:">&#182;</a></h3><p><br>1. $H_0: \mu = 0.5$, $H_a: \mu \ne 0.5$
 $$t = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}} = \frac{\bar{x} - 0.5}{\frac{s}{\sqrt{n}}}$$</p>
-<ul>
-<li>So if you are testing portfolio A returns are equal to the T-Bill (3.2% returns)<ul>
-<li>$H_0: \bar{x_a} = \mu_{T-Bill} = 3.2$%, $H_a: \bar{x_a} \ne 3.2$% </li>
-<li>$t_{test} = \frac{\bar{x_a}-\mu_{T-Bill}}{\frac{s_a}{\sqrt{n_a}}} = \frac{\bar{x_a}-.0320}{\frac{s_a}{\sqrt{n_a}}}$
-<br></li>
-</ul>
-</li>
-</ul>
 <h3 id="If-you-are-testing-between-two-sample-populations-and-you-want-to-do-the-following-tests:">If you are testing between two sample populations and you want to do the following tests:<a class="anchor-link" href="#If-you-are-testing-between-two-sample-populations-and-you-want-to-do-the-following-tests:">&#182;</a></h3><p><br>2. $H_0: \mu_1 = \mu_2$, $H_a: \mu_1 \ne \mu_2$ (Two tailed)
 <br>3. $H_0: \mu_1 \ge \mu_2$, i.e. $\mu_1 - \mu_2 \ge 0$, $H_a: \mu_1 \lt \mu_2$ (One tailed)
 <br></p>
@@ -11817,10 +11809,213 @@ If variances are <strong>equal</strong> then, $\color{red}{\text{if t-test}, df 
 </ul>
 </li>
 <li><a href="http://www.z-table.com/">z-test table</a></li>
+<li>You could use the scipy.stats.ttest_rel() function here but I want to go through the explicit calculations</li>
 </ul>
+<h2 id="Example-1:-test-that-portfolio-A-returns-are-equal-to-the-risk-free-annualized-return-of-3.5%">Example 1: test that portfolio A returns are equal to the risk-free annualized return of 3.5%<a class="anchor-link" href="#Example-1:-test-that-portfolio-A-returns-are-equal-to-the-risk-free-annualized-return-of-3.5%">&#182;</a></h2><ul>
+<li><em>Hypothesis</em> 
+<br>$H_0: \bar{x_a} = \mu_{r-free} = 3.5$%, $H_a: \bar{x_a} \ne 3.5$% </li>
+<li>$t_{test} = \frac{\bar{x_a}-\mu_{r-free}}{\frac{s_a}{\sqrt{n_a}}} = \frac{\bar{x_a}-.035}{\frac{s_a}{\sqrt{n_a}}}$
+<br></li>
+</ul>
+<p>Here we do a t-test since we only have df = 10 - 1 = 9 degrees of freedom. The corresponding critical value is 2.262. Since |-0.168| &lt; 2.262 then we fail to reject the null. In short the returns of portfolio A are not different from 3.5%.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setup the data</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">123.5</span><span class="p">,</span> <span class="mf">121.3</span><span class="p">,</span> <span class="mf">106.5</span><span class="p">,</span> <span class="mf">102.8</span><span class="p">,</span> <span class="mf">118.9</span><span class="p">,</span> <span class="mf">129.6</span><span class="p">,</span> <span class="mf">137.9</span><span class="p">,</span> <span class="mf">142.9</span><span class="p">,</span> <span class="mf">153.7</span><span class="p">,</span> <span class="mf">162.9</span><span class="p">,</span> <span class="mf">168.3</span><span class="p">],</span>
+                    <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">108.6</span><span class="p">,</span> <span class="mf">101.4</span><span class="p">,</span> <span class="mf">93.8</span><span class="p">,</span> <span class="mf">101.9</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mf">119.6</span><span class="p">,</span> <span class="mf">128.7</span><span class="p">,</span> <span class="mf">139.5</span><span class="p">,</span> <span class="mf">145.8</span><span class="p">,</span> <span class="mf">152.8</span><span class="p">,</span> <span class="mf">162.5</span><span class="p">],</span>
+                   <span class="s1">&#39;year&#39;</span><span class="p">:[</span><span class="mi">2006</span><span class="p">,</span> <span class="mi">2007</span><span class="p">,</span> <span class="mi">2008</span><span class="p">,</span> <span class="mi">2009</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">]})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+<span class="c1"># Calculate the log returns</span>
+<span class="n">returns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span>
+<span class="c1"># Calculate mean, var and standard dev of returns</span>
+<span class="n">mu_a</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
+<span class="n">var_a</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
+<span class="n">s_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pfol A: mean return = </span><span class="si">{0:.4f}</span><span class="s2">, variance return = </span><span class="si">{1:.4f}</span><span class="s2">, std. dev. return = </span><span class="si">{2:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mu_a</span><span class="p">,</span> <span class="n">var_a</span><span class="p">,</span> <span class="n">s_a</span><span class="p">))</span>
+<span class="n">mu_b</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span>
+<span class="n">var_b</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span>
+<span class="n">s_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pfol B: mean return = </span><span class="si">{0:.4f}</span><span class="s2">, variance return = </span><span class="si">{1:.4f}</span><span class="s2">, std. dev. return = </span><span class="si">{2:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mu_b</span><span class="p">,</span> <span class="n">var_b</span><span class="p">,</span> <span class="n">s_b</span><span class="p">))</span>
+
+<span class="c1"># Do t-test</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;student t statistic = </span><span class="si">{0:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">mu_a</span> <span class="o">-</span> <span class="o">.</span><span class="mi">035</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s_a</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Pfol A: mean return = 0.0310, variance return = 0.0058, std. dev. return = 0.0763
+Pfol B: mean return = 0.0403, variance return = 0.0038, std. dev. return = 0.0619
+student t statistic = -0.168
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Example-2:-test-that-returns-for-portfolio-A-are-not-different-from-portfolio-B-returns">Example 2: test that returns for portfolio A are not different from portfolio B returns<a class="anchor-link" href="#Example-2:-test-that-returns-for-portfolio-A-are-not-different-from-portfolio-B-returns">&#182;</a></h2><p>First you need to do an F-test of the variances (item 4 in the notes). That result is that the variances of returns between portfolio A and B are not statistically different. Refer to example 4 for that part. Note that <em>df</em> = 10+10-2 = 18 so that we need to do a t-test.
+<br>
+<strong>Hypothesis:</strong>
+<br>$H_0: \mu_a = \mu_b$ 
+<br>$H_a: \mu_a \ne \mu_b$
+$$t_{test} = \frac{\bar{x_a}-\bar{x_b}}{\sqrt{S_p^2[\frac{1}{n_a}+\frac{1}{n_b}]}}, \quad S_p^2 = \frac{(n_a - 1)S_a^2 + (n_b - 1)S_b^2}{n_a + n_b - 2} $$
+<br>T-test 95% confidence critical value for df=10+10-2=18 is 2.101
+<br>t-test result = -0.301
+<br><strong>Conclusion:</strong> 0.301 &lt; 2.101(critical value) so we fail to reject the null. So portolio A returns are no differnt from portoflio B returns.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var_p</span> <span class="o">=</span> <span class="p">((</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">var_a</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">var_b</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">mu_a</span> <span class="o">-</span> <span class="n">mu_b</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_p</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t-statistic = </span><span class="si">{0:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>t-statistic = -0.301
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Example-3:-test-that-portfolio-A-returns-are-larger-than-those-of-portfolio-B">Example 3: test that portfolio A returns are larger than those of portfolio B<a class="anchor-link" href="#Example-3:-test-that-portfolio-A-returns-are-larger-than-those-of-portfolio-B">&#182;</a></h1><p>We need a one tailed t-test. And we know that the variance of returns between portfolio A and B are equal.
+<br>$H_0: \mu_{a} &gt;= \mu_b$ or $H_0: \mu_{a} - \mu_b &gt;= 0$ 
+<br>$H_a: \mu_{a} &lt; \mu_b$ 
+<br>$t_{test} = \frac{\bar{x_a}-\bar{x_b}}{\sqrt{S_p^2[\frac{1}{n_a}+\frac{1}{n_b}]}}, \quad S_p^2 = \frac{(n_a - 1)S_a^2 + (n_b - 1)S_b^2}{n_a + n_b - 2} $
+<br>
+<br>T-test 95% confidence critical value for df=10+10-2=18 is 1.734 (1-sided)
+<br>t-test result = -0.301
+<br><strong>Conclusion:</strong> |-0.301| &lt; 1.725(critical value) so we fail to reject the null. Therefore portfolio A does have an equal or higher performance than portfolio B.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var_p</span> <span class="o">=</span> <span class="p">((</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">var_a</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">var_b</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t_test = </span><span class="si">{0:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">mu_a</span> <span class="o">-</span> <span class="n">mu_b</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_p</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">))))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>t_test = -0.301
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Example-4:-test-that-portfolio-A-and-B-return-variances-are-not-different">Example 4: test that portfolio A and B return variances are not different<a class="anchor-link" href="#Example-4:-test-that-portfolio-A-and-B-return-variances-are-not-different">&#182;</a></h1><p><br>$H_0: \sigma_a^2 = \sigma_b^2$ 
+<br>$H_a: \sigma_a^2 \ne \sigma_b^2$ 
+<br>$F_{test}=\frac{S_a^2}{S_b^2}$
+<br>Because $F_{.05}(ν_a,ν_b)$ = 2.978 and $F_{test}$ = 1.521 we fail to reject the null hypothesis that the variance of returns in portfolio A is the same as the variance of returns in portfolio B.
+<br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;F-test, var(a)/var(b) = </span><span class="si">{0:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">var_a</span><span class="o">/</span><span class="n">var_b</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>F-test, var(a)/var(b) = 1.521
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
