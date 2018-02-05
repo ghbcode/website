@@ -1,11 +1,11 @@
 theme: jekyll-theme-cayman
-	title: GHBCode's Site
-	description: Notes and samples on Math, Data Analysis and Python
-	defaults:
-	  # _docs
-	  - scope:
-	      path: ""
-	      type: docs
-	    values:
-	      sidebar:
-	        nav: "docs"
+title: GHBCode's Site
+description: Notes and samples on Math, Data Analysis and Python
+defaults:
+  # _docs
+  - scope:
+      path: ""
+      type: docs
+    values:
+      sidebar:
+	nav: "docs"
