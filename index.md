@@ -11,7 +11,7 @@ I am a father and a working professional almost finished with my Master's degree
 * [Email](mailto:ghbcode@gmail.com)
 * [LinkedIn](https://www.linkedin.com/in/gonzalobricenosf)
 
-### Coding & Other Skills
+### Coding & Comp Sci
 * Skilled
   * Python, R, Matlab, VB
   * MSSQL/Oracle/MySQL
