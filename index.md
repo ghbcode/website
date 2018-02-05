@@ -11,7 +11,7 @@ I am a father and a working professional almost finished with my Master's degree
 * [Email](mailto:ghbcode@gmail.com)
 * [LinkedIn](https://www.linkedin.com/in/gonzalobricenosf)
 
-## Coding & Other Skills
+### Coding & Other Skills
 * Python
 * R
 * Matlab
@@ -20,6 +20,6 @@ I am a father and a working professional almost finished with my Master's degree
 * MSSQL/Oracle/MySQL
 * Tableau
 
-## Quantitative Courses
+### Quantitative Courses
 * Machine Learning - Fall 2017
 
