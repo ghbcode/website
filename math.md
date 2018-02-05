@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default_sidebar
 title: Topics in Math
 description: posted by ghbcode on 2014/05/13
 ---
