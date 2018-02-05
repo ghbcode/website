@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default_sidebar
 title: Topics in Python and Coding
 description: posted by ghbcode on 2015/01/17
 ---
