@@ -1,9 +1,11 @@
 - Math
-  - clean up the other posts
+- Finance
   - add posts with FBE 543
 - Python
-  - (structure like a package, unit tests, tensorflow)
+  - (structure like a package, unit tests, cython, tensorflow)
 - block stuff (trading, ethereum programming)
+
+#2196F3, #eee backgrond 
 
 * structure code like a package
   * https://sdsawtelle.github.io/blog/output/data-science-project-standard-cookiecutter-structure.html
