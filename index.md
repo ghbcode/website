@@ -6,7 +6,7 @@ toc: True
 ---
 
 ### Who am I? 
-I am a father and a working professional almost finished with my Master's degree in Financial Engineering from **USC**. I received my B.S.E. from **UPenn**. My interests are varied although they often lie in the areas of Math and Science (though I have a deep appreciation for the liberal arts:). When I'm not working or taking care of my daughter I work on many projects including (mostly) lots of home improvement, some welding, carpentry, a sprinkle of 3D printing and the occasional arduino yun project (although I would love to have more time for these). I have always been and will remain to be an avid student and these pages are meant to keep track of important topics. This is a work in progress so there will surely be changes along the way.
+I am a father and a working professional almost finished with my Master's degree in Financial Engineering. My interests are varied although they often lie in the areas of Math and Science. When I'm not working or taking care of my daughter I work on many projects including (mostly) lots of home improvement, some welding, carpentry, a sprinkle of 3D printing and the occasional arduino yun project (although I would love to have more time for these). I have always been and will remain to be an avid student and these pages are meant to keep track of important topics. This is a work in progress so there will surely be changes along the way.
 
 * [Email](mailto:ghbcode@gmail.com)
 * [LinkedIn](https://www.linkedin.com/in/gonzalobricenosf)
