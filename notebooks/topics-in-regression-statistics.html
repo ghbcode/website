@@ -11813,7 +11813,7 @@ div#notebook {
 <br>$1 = \frac{\beta_1^2\sum{x^2}}{\sum{y^2}} + \frac{\sum{\epsilon^2}}{\sum{y^2}} = \text{explained variation + error sum squared}$
 <br></p>
 <ul>
-<li>$\color{red}{R^2 = .85 \text{means 85% of variance in y is explained by x}}$
+<li>$R^2 = .85$ means 85% of variance in y is explained by x
 <br></li>
 </ul>
 <p><em>Standard Error</em>
@@ -11839,6 +11839,9 @@ $y^F = \hat{\beta_0} + \hat{\beta-1}X_0$
 </li>
 </ul>
 </li>
+<li>$ Coefficient of Variation = \frac{\sigma_x}{\bar{x}}$</li>
+<li>$ Sharpe Ratio = \frac{\bar{R_a} - r_f}{\sigma_a}$</li>
+<li>$ Treynor Ratio = \frac{\bar{R_A} - \bar{r_f}}{\beta_A}$</li>
 </ul>
 <h3 id="Event-Studies">Event Studies<a class="anchor-link" href="#Event-Studies">&#182;</a></h3><p>Ex-post or in-sample</p>
 <ul>
@@ -11923,21 +11926,9 @@ $$t_d (or\space z_d) = \frac{\bar{X_1}-\bar{X_2}}{\sqrt{S_p^2[\frac{1}{n_1}+\fra
 <p><strong>F-test (to test if sample variances are the same)</strong>
 <br>$H_0: \sigma_1^2 = \sigma_2^2$, $H_a: \sigma_1^2 \ne \sigma_2^2$ 
 <br>$F=\frac{S_1^2}{S_2^2}$</p>
-<p><strong>F-test (to test if sample means are the same)</strong>
-<br>$H_0: \mu_0 = \mu_1 = \mu_2$, $H_a:$ at least one mean is not the same as the others</p>
-<ul>
-<li>to find out which mean is not the same as the others use the <strong>TukeyHSD</strong> test</li>
-</ul>
-<p><strong>F-statistic (in multiple regresison to test if all of the coefficients are jointly = 0)</strong>
-<br>$H_0: \mu_0 = \mu_1 = \mu_2 = \mu_3 = 0$</p>
-<ul>
-<li>The rule of thumb is that if F&gt;4, then the coefficients are NOT jointly = 0, and so the regression seems significant and valid. </li>
-<li>The F-statistic DOES NOT comment on the intercept, so if you fail to reject null, then all that is left is the intercept</li>
-</ul>
-<p><strong>Joint Hypothesis Test</strong>
-$H_0: \mu_1 = \mu_2 = \mu_3$<br>
-$H_a:$ at least one $\mu$ is different</p>
-<p>Say that $\bar{\bar{x}}$ is the average for $x_1, x_2 and x_3$<br></p>
+<p><strong>F-test aka Joint Hypothesis Test (to test if sample means are the same)</strong>
+<br>$H_0: \mu_0 = \mu_1 = \mu_2$, $H_a:$ at least one $\mu$ is different</p>
+<p>Say that $\bar{\bar{x}}$ is the average for $x_1, x_2, x_3$<br></p>
 <ul>
 <li>Sum Square Treatment (SST) = $(\bar{x_1}-\bar{\bar{x}})^2 + (\bar{x_2}-\bar{\bar{x}})^2 + (\bar{x_3}-\bar{\bar{x}})^2$</li>
 <li>Sum Square Error (SSE) = $\sum{(x_{1_i}-\bar{x_1})^2} + \sum{(x_{2_i}-\bar{x_2})^2} + \sum{(x_{3_i}-\bar{x_3})^2}$</li>
@@ -11945,6 +11936,13 @@ $H_a:$ at least one $\mu$ is different</p>
 <li>if F is large you reject the null (means are too far away from the mean of the means $\bar{\bar{x}}$), or the means are not the same</li>
 </ul>
 </li>
+<li>to find out which mean is not the same as the others use the <strong>TukeyHSD</strong> test</li>
+</ul>
+<p><strong>F-statistic (in multiple regresison to test if all of the coefficients are jointly = 0)</strong>
+<br>$H_0: \mu_0 = \mu_1 = \mu_2 = \mu_3 = 0$</p>
+<ul>
+<li>The rule of thumb is that if F&gt;4, then the coefficients are NOT jointly = 0, and so the regression seems significant and valid. </li>
+<li>The F-statistic DOES NOT comment on the intercept, so if you fail to reject null, then all that is left is the intercept</li>
 </ul>
 <p><strong>A quick word on the number of samples</strong></p>
 <ul>
@@ -11987,7 +11985,8 @@ $H_a:$ at least one $\mu$ is different</p>
 </ul>
 </li>
 </ul>
-<h2 id="Gauss-Markov-Theorem-(CLRM)">Gauss-Markov Theorem (CLRM)<a class="anchor-link" href="#Gauss-Markov-Theorem-(CLRM)">&#182;</a></h2><ul>
+<h2 id="Gauss-Markov-Theorem-(CLRM)">Gauss-Markov Theorem (CLRM)<a class="anchor-link" href="#Gauss-Markov-Theorem-(CLRM)">&#182;</a></h2><p>If a quality is not mentioned that is because the effect does not exist.</p>
+<ul>
 <li>$E(\epsilon) = 0$<ul>
 <li>if violated: $\hat{\beta}$ are biased and inefficient, standard error is not the right one</li>
 <li>causes: no intercept $\beta_0$ defined</li>
@@ -11996,20 +11995,26 @@ $H_a:$ at least one $\mu$ is different</p>
 </li>
 </ul>
 <ul>
-<li>$E(\epsilon x)=0$ (covariance, correlation should be 0)<ul>
+<li>$E(\epsilon x)=0$ (covariance, correlation should be 0) OLS by nature makes this = 0<ul>
+<li>macroeconomic model that has 2-way causality</li>
+<li>case 1: aggregate data usually has this two way causality<ul>
+<li>$C=\beta_0 + \beta_1Y + \epsilon$, i.e. <em>Y</em> causes <em>C</em> and the other way around</li>
+</ul>
+</li>
+<li>case 2: unobservable variables $i = r + \pi^e$, interest rate = real interest rate + expectation[inflation]</li>
 <li>if violated: $\hat{\beta}$ are biased, inefficient, and inconsistent</li>
-<li>causes: happens mostly with <strong>aggregate data</strong>, $C=\beta_0 + \beta_1Y + \epsilon$, when you have two way causality, i.e. <em>Y</em> causes <em>C</em> and the other way around</li>
-<li>solutions: Use IV estimation(l9) to avoid two-way causality</li>
+<li>correction: via IV(instrumental variable) estimate</li>
 </ul>
 </li>
 </ul>
 <ul>
 <li>$E(\epsilon_t \epsilon_{t-1}) = 0$ (errors are time independent, no <strong>serial/auto correlation</strong><ul>
-<li>if violated: the $\hat{\beta}$ coefficients will be $\color{red}{unbiased}$ but inefficient. The t-stastics are not usable (you don't know if coefficients are significant or not). The standard error is not the true SE.</li>
-<li>causes: </li>
-<li>solutions: <ul>
+<li>happens only with time series data</li>
+<li>if violated: the $\hat{\beta}$ coefficients will be $\color{red}{unbiased}$ and inefficient.</li>
+<li>tests: Durbin Watson (1st order), Breusch-Godfrey (2nd and 3rd order)</li>
+<li>correction: use Cochrane-Orcutt Methodology <ul>
 <li>graph the residuals of the regression to see if there is a pattern</li>
-<li>Correct using Cochrane-Orcutt Methodology<ul>
+<li>Correct using <strong>Cochrane-Orcutt Methodology</strong><ul>
 <li>You have regression $Y_t=\beta_0 + \beta_1X_t + \epsilon_t$</li>
 <li>$\epsilon_t =\rho\epsilon_{t-1} + e_t$<ul>
 <li>$\rho$ is the correlation between $\epsilon_t$ and $\epsilon_{t-1}$. </li>
@@ -12039,55 +12044,55 @@ $$ \color{red}{Y_t^* = b_0 + \beta_1 X_t^* + e_t}$$</li>
 </li>
 </ul>
 </li>
-<li><strong>Breusch-Godfrey</strong> (for second order only)</li>
+<li><strong>Breusch-Godfrey</strong> (for second and third order)</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <ul>
-<li>$E(\epsilon^2) = \sigma^2$ (variance of the error is constant, <strong>homoskedastic</strong> regresssion)<ul>
-<li>very important in cross-sectional data</li>
-<li>if violated: beta coefficients will be unbiased but inefficient (t-values will be misleading)</li>
-<li>causes: </li>
-<li>solutions:    </li>
+<li><p>$E(\epsilon^2) = \sigma^2$ (variance of the error is constant, <strong>homoskedastic</strong> regresssion)</p>
+<ul>
+<li>happens only with cross-sectional data</li>
+<li>if violated: beta coefficients will be unbiased and inefficient (t-values will be misleading)</li>
+<li>causes: variance is not constant  </li>
 <li><strong>Statistical Tests for Heteroskedasticity</strong><ul>
-<li>For heteroskedasticy tests the null is $H_0$ homoskedastic<ul>
+<li>For heteroskedasticy tests the null is $H_0: \sigma_1^2 = ... = \sigma_n^2$ homoskedastic<ul>
 <li>so if you reject null, then you have heteroskedasticity and hence a problem</li>
 </ul>
 </li>
-<li><strong>Bresusch-Pagan</strong> (bptest)<ul>
+<li><strong>Bresusch-Pagan</strong> (bptest) - ise if you don't know which X caussing issue<ul>
 <li>Not to be confused with the bgtest (for serial correlation)</li>
 </ul>
 </li>
 <li><strong>White test</strong></li>
-<li><strong>Goldfeld-Quandt</strong><ul>
-<li>compute $\hat{\epsilon^2}$</li>
+<li><strong>Goldfeld-Quandt</strong> - when you know which X is causing issue<ul>
+<li>compute $\hat{\epsilon^2}$ </li>
 <li>sort from smallest to largest based on the variable that is causing heteroskedasticity<ul>
 <li>here you regress error on ind. vars. $$\hat{\epsilon_{X_1}^2} = \alpha_0 + \alpha_1 X_1\\
 \hat{\epsilon_{X_2}^2} = \alpha_2 + \alpha_3 X_2$$</li>
 </ul>
 </li>
-<li>F-test on the top and bottom 40% of the $\epsilon^2$
+<li>F-test on the top and bottom 40% of the $\epsilon^2$ (where $\hat{\epsilon}$ comes from the original regression)
 <img src="lecture12.png" alt="Goldfeld-Quand test"></li>
 <li>Correction is to divide every variable by the variable causing heteroskedasticity. Say that $X_2$ is the cause, $$\frac{Y}{X_2} = \beta_0 + \beta_1 \frac{X_1}{X_2}$$</li>
 </ul>
 </li>
 </ul>
 </li>
+<li>correction:  </li>
 </ul>
 </li>
-</ul>
+<li><p>No severe multi-collinearity</p>
 <ul>
-<li>No severe multi-collinearity - when a number of ind variables are highly correlated to eachother<ul>
 <li>if violated: <strong>Does not result in unbiased or inefficient</strong> estimates, the <strong>WHOLE</strong> regression is off</li>
-<li>causes: </li>
+<li>causes: when a number of ind variables are highly correlated to eachother</li>
 <li>common signs: <ul>
 <li>Beta coefficients having wrong signs from what is expected, i.e. inversely related coefficients having same sign.</li>
 <li>Inconsistent regression statistics. Ex: significant coefficients, high $R^2$ &gt; .7 and a low F. If you have significant coefficients and a high $R^2$ you would expect an F &gt; 4. In fact, if all are significant F &gt; 50. </li>
 </ul>
 </li>
-<li>solutions: </li>
+<li>solutions: drop least important variable</li>
 <li><strong>Statistical Tests for Multicolinearity</strong><ul>
 <li>Corr Test among all independent variables<ul>
 <li>if $r &gt; |.9|$ that is usually a sign of multicolinearity </li>
@@ -12137,7 +12142,10 @@ $$ \color{red}{Y_t^* = b_0 + \beta_1 X_t^* + e_t}$$</li>
 <li>Take the R^2 and this is the restricted R^2</li>
 </ul>
 </li>
-<li>Take F test, $F = \frac{R_u^2 - R_r^2}{1-R_u^2}\frac{n-k}{m}$, where n is the number of restrictions<ul>
+<li>Take F test, $F = \frac{R_u^2 - R_r^2}{1-R_u^2}\frac{n-k}{m}$, <ul>
+<li>where n is the number of samples</li>
+<li>k are the number of slopes (not including the intercept)</li>
+<li>m are the number of restrictions (number of = signs)</li>
 <li>$H_0$: Restriction holds, i.e. $\beta_1 + \beta_2 =1$<ul>
 <li>R: LinearHypothesis(reg, "beta1+beta2=1"), reg is the orginal(1st regression)</li>
 <li>R: LinearHypothesis(reg, c("beta1+beta2=1","beta3=2"))</li>
@@ -12163,6 +12171,10 @@ $$ \color{red}{Y_t^* = b_0 + \beta_1 X_t^* + e_t}$$</li>
 </ul>
 </li>
 <li>If you have an omitte variable - your coefficients are going to be biased, inefficient and inconsistent. </li>
+<li><strong>Shapiro</strong> test of normality <ul>
+<li>Null is that the variable is normally distributed</li>
+</ul>
+</li>
 </ul>
 
 </div>
