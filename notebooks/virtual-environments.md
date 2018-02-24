@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default_sidebar
 title: Notes and Samples on Python Topics
 description: posted by ghbcode on 2015/01/17
 ---
