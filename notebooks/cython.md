@@ -105,11 +105,11 @@ And that is all. If the translation step worked you should be able to run the se
 t = Timer('c_prime.calculate(10000)', 'import prime')
 ```
 
-you should see roughly a 600% increase in speed. That is pretty neat considering how little effor it took. As mentioned previously, the key step is in changing the original Python code so that the translation to C make as much use of the C language as possible. And there is a very good tool to help you toward that goal. If you run the command below a .html file will be generated where the lines that are highlighted yellow indicate code that stands to gain from updates. 
+You should see roughly a 600% increase in speed. That is pretty neat considering how little effor it took. As mentioned previously, the key step is in changing the original Python code so that the translation to C makes as much use of the C language as possible. And there is a very good tool to help you toward that goal. If you run the command below a .html file will be generated where the lines that are highlighted yellow indicate code that stands to gain from updates. 
 
 > cython c_prime.pyx -a
 
-In the image below you will see that the for loop in line 9 became a single line of C code. This can be gleaned by clicking on the '+' sign by line 9 and seeing that there is only one like of code there. Conversely, if you click around other lines you will see that what may seem like a one liner is in fact a large amount of code. 
+In the image below you will see that the for loop in line 9 became a single line of C code (this can be gleaned by clicking on the '+' sign by line 9 and seeing that there is only one like of code there). Previously, this loop was something like 20 commands or so. 
 
 ![cython improvement areas](cython.png)
 
