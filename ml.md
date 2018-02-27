@@ -5,9 +5,7 @@ description: posted by ghbcode on 2014/11/23
 ---
 
 
-Each topic is covered within a self contained python notebook. In some cases the notebooks run code using the [scikit-learn library](http://scikit-learn.org/stable/modules/classes.html). To begin I'm noting the main ideas first and updates/revisions will follow.
-
-There are various ways to categorize machine learning methods but a common way to think about it is via the following  categories, i.e. supervised learning, semi-supervised learning and unsupervised learning. Note that there is another distinction, whether your output is a real-valued number or some sort of classification. Classification can also contain probability measure as in, 'input X is of class A with a probability of 80%'. Other ways to think of machine learning involve categorizing the methods used by the models or the general idea that the model is using. For now I will use the former method to categorize and list machine learning algorithms.
+There are various ways to categorize machine learning methods but a common way to think about it is via the following  categories, i.e. supervised learning, semi-supervised learning and unsupervised learning. Note that there is another distinction, whether your output is a real-valued number or some sort of classification. Classification can also contain probability measure as in, 'input X is of class A with a probability of 80%'. Other ways to think of machine learning involve categorizing the methods used by the models or the general idea that the model is using. For now I will use the former method to categorize and list machine learning algorithms. Lastly please note that Artificial Intelligence is the overarching theme, inside of that is machine learning and that deep learning is considered to be a subset of machine learning. 
 
 * **Supervised Learning** - use labeled data to train your algorithm
   * [Data Processing and Preliminaries](/website/notebooks/data-processing-preliminaries.html)
