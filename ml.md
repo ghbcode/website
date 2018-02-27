@@ -37,4 +37,6 @@ There are various ways to categorize machine learning methods but a common way t
   * [More on Unsupervised Learning](/website/notebooks/usl.html)
   * [PCA to reduce dimensionality](/website/notebooks/pca.html)
   * [K-Means to find subsets in the data](/website/notebooks/k-means.html)
+* **Deep Learning** - A method that improves on traditional machine learning methods, Deep Learning makes use of neural networks that essentially give the algorithm the ability to process the data in a non-linear fashion. This often results in a performance that beats traditional methods although this comes at the expense of complexity and needing large amounts of data.
+  * [Introduction to Deep Learning using Tensorflow](/website/notebooks/deep-learning.html)
 
