@@ -35,6 +35,6 @@ I am a father and a working professional almost finished with my Master's degree
 * Mathematical Modeling and its Application in Finance (The Wharton School)
 
 ### Blogs that I follow
-* [Brandon Rohrer on Data Science]https://brohrer.github.io/blog.html
-* [Token Economy]https://tokeneconomy.co/
+* [Brandon Rohrer on Data Science](https://brohrer.github.io/blog.html)
+* [Token Economy](https://tokeneconomy.co/)
 * [Econ Browser](http://econbrowser.com/)
