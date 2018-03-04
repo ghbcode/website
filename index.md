@@ -33,3 +33,8 @@ I am a father and a working professional almost finished with my Master's degree
 * Probability for Electrical and Computer Engineers
 * Credit Risk and Credit Derivatives (Columbia University)
 * Mathematical Modeling and its Application in Finance (The Wharton School)
+
+### Blogs that I follow
+* [Brandon Rohrer on Data Science]https://brohrer.github.io/blog.html
+* [Token Economy]https://tokeneconomy.co/
+* [Econ Browser](http://econbrowser.com/)
