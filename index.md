@@ -34,7 +34,9 @@ I am a father and a working professional almost finished with my Master's degree
 * Credit Risk and Credit Derivatives (Columbia University)
 * Mathematical Modeling and its Application in Finance (The Wharton School)
 
-### Blogs that I follow
+### Blogs that I follow/Sites that I visit
 * [Brandon Rohrer on Data Science](https://brohrer.github.io/blog.html)
 * [Token Economy](https://tokeneconomy.co/)
 * [Econ Browser](http://econbrowser.com/)
+* [Makezine - Arduino](https://makezine.com/category/technology/arduino/)
+* [MatterHackers Articles](https://www.matterhackers.com/articles/)
