@@ -13,6 +13,6 @@ As with the other sections this Math page contains various resources for my refe
 * [Note on likelihood probabilities](/website/notebooks/Note-likelihood-probabilities.html)
 * [When computing sample variance why divide by n-1?](/website/notebooks/computing-sample-variance-n-1.html)
 * [How to generate correlated random variables](/website/notebooks/generate-correlated-rvs.html)
-* [GARCH 1,1](/website/notebooks/GARCH-1-1.html)
 * [ACF And APF functions](/website/notebooks/ACF-PACF-functions.html)
+* [GARCH 1,1](/website/notebooks/GARCH-1-1.html)
 * [Principal Component Analysis for dimensionality redux](/website/notebooks/pca.html)
