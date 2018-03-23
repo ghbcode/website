@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Reference - Tensorflow Lean</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Reference - Tensorflow-Lean</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -12562,27 +12562,6 @@ gg==
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of train errors:&#39;</span><span class="p">,</span> <span class="n">errors_train</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of test errors&#39;</span><span class="p">,</span> <span class="n">errors_test</span><span class="p">)</span>
 
-<span class="c1"># Don&#39;t know what this is used for</span>
-<span class="c1"># with tf.Session(graph=g) as sess:</span>
-<span class="c1">#     saver.restore(sess, os.path.abspath(&#39;perceptron&#39;))</span>
-
-<span class="c1">#     for epoch in range(1):</span>
-<span class="c1">#         for example, target in zip(X_train, y_train):</span>
-<span class="c1">#             feed_dict = {features: example.reshape(-1, n_features),</span>
-<span class="c1">#                          targets: target.reshape(-1, 1)}</span>
-<span class="c1">#             _, _ = sess.run([weight_update, bias_update], feed_dict=feed_dict)</span>
-<span class="c1">#             modelparams = sess.run(params)</span>
-
-<span class="c1">#     saver.save(sess, save_path=&#39;./perceptron&#39;)</span>
-    
-<span class="c1">#     pred = sess.run(prediction, feed_dict={features: X_train})</span>
-<span class="c1">#     train_errors = np.sum(pred.reshape(-1) != y_train)</span>
-<span class="c1">#     pred = sess.run(prediction, feed_dict={features: X_train})</span>
-<span class="c1">#     test_errors = np.sum(pred.reshape(-1) != y_train)</span>
-
-<span class="c1">#     print(&#39;Number of training errors&#39;, train_errors)</span>
-<span class="c1">#     print(&#39;Number of test errors&#39;, test_errors)</span>
-
 <span class="c1"># Graph the results</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;class 0&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;class 1&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
@@ -13269,6 +13248,15 @@ AACZCAgAQKb/B2VRDmlwMJyxAAAAAElFTkSuQmCC
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Admittedly the logistic regression implementation of the perceptron beat out the tensorflow/neural network version. For higher dimensional and more complex scenarios the neural network will beat other methods or be the only practical option.</p>
+
+</div>
+</div>
 </div>
     </div>
   </div>
