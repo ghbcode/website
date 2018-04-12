@@ -17,3 +17,4 @@ I've printed a bunch of toys with this printer and lately lots of tools such as 
 * added leg dampeners to aid with vibration
 * added supports for better routing of the cables
 * printed a couple of useful tool holders and adjustment tools
+* made a few updates to the firmware as per this [Marlin page](https://github.com/arunoda/marlin)
