@@ -1,0 +1,14 @@
+---
+layout: default_sidebar
+title: GHBCode's Site
+description: Notes and samples on Math, Machine Learning and Python
+toc: True
+---
+
+### 3D Printing
+
+I've been 3D printing for a while now but in the past I had been using the printer available via the local library. A few months back I decided to purchase the Tevo Tornado and so far I am very happy with it. After the initial excitement I finally moved the printer to my shop and built an enclosure for it so that it doesn't get too dirty. 
+
+![Tevo Tornado](images/tevo_tornado.jpg)
+
+I've printed a bunch of toys with this printer and lately lots of tools such as pocket hole jig, dremel accessory for sharpening drill bits, dremel table top holder, couplers, etc. I even printed a tennis racket dampener using the flexible filament PLA material. So far it is holding up. 
