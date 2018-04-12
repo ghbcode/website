@@ -20,5 +20,6 @@ Other topics
 * [Use Cython to speed up your code](/website/notebooks/cython.html)
 * [Considerations for writing code and packages](/website/notebooks/code-considerations.html)
 * [Sched - A cross platform Cron alternative](/website/notebooks/sched.html)
+* [Different ways to import](/website/notebooks/import_options.html)
 Resources
 * [statsmodels dev notebooks](http://www.statsmodels.org/dev/examples/)
