@@ -52,8 +52,8 @@ I keep a file called 'requirements.txt' in the xyz folder and in it I list all o
     > pip install -r requirements.txt
 ```
 
-A sample 'requirements.txt' file will look like:
-<br>pandas
+A sample 'requirements.txt' file will look like (with the ==version in case that you need that specific version):
+<br>pandas==0.10.5
 <br>numpy
 <br>scipy
 <br>scikit-learn
