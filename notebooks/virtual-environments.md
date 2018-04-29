@@ -51,3 +51,11 @@ I keep a file called 'requirements.txt' in the xyz folder and in it I list all o
 ``` python
     > pip install -r requirements.txt
 ```
+
+A sample 'requirements.txt' file will look like:
+pandas
+numpy
+scipy
+scikit-learn
+sqlalchemy
+etc..
