@@ -28,6 +28,7 @@ It is really as simple as that, if you want to create an environment:
 ```
 - update the xyz/bin/activate file so that $PYTHONPATH points to the xyz/lib/site-packages and other locations where you may have modules
 
+
 And now you can carry on as follows whenver you want to use this environment:<br>
 - you go to the folder that is your particular venv
   - cd ~/my_venv
