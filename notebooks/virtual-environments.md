@@ -53,9 +53,9 @@ I keep a file called 'requirements.txt' in the xyz folder and in it I list all o
 ```
 
 A sample 'requirements.txt' file will look like:
-pandas
-numpy
-scipy
-scikit-learn
-sqlalchemy
-etc..
+<br>pandas
+<br>numpy
+<br>scipy
+<br>scikit-learn
+<br>sqlalchemy
+<br>etc..
