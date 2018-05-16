@@ -100,6 +100,8 @@ def calculate(limit):
 ```
 python translate.py build_ext --inplace
 ```
+> python translate.py build_ext --inplace
+
 
 And that is all. If the translation step worked you should be able to run the second code block above albeit with the following command instead of calling **prime.py**
 
