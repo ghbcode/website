@@ -97,7 +97,9 @@ def calculate(limit):
 ```
 * translate the Python code into the Cython module via the command
 
-> python translate.py build_ext ---inplace
+```
+python translate.py build_ext --inplace
+```
 
 And that is all. If the translation step worked you should be able to run the second code block above albeit with the following command instead of calling **prime.py**
 
