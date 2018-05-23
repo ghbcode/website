@@ -7,7 +7,7 @@ toc: True
 
 ### 3D Printing
 
-I've been 3D printing for a while now but in the past I had been using the printer available via the local library. A few months back I decided to purchase the Tevo Tornado and so far I am very happy with it. After the initial excitement I finally moved the printer to my shop and built an enclosure for it so that it doesn't get too dirty. 
+I've been 3D printing for a while now but in the past I had been using the printer available in the local library. The turn around time was not bad at all actually... A few months back I decided to purchase the Tevo Tornado and so far I am very happy with it. Initial excitement had me store the printer in a spare bedroom totally in the way. After a couple of close calls where my girl tried to pry out a cable, I finally moved the printer to my shop and built an enclosure for it so that it doesn't get too dirty. 
 
 ![Tevo Tornado](assets/tevo_tornado.jpg)
 
