@@ -23,7 +23,7 @@ h2.tagline {
     width: 150px;
     position: fixed;
     z-index: 1;
-    top: 360px;
+    top: 300px;
     left: 5px;
     background: #F2F2F2;
     overflow-x: hidden;
@@ -104,8 +104,15 @@ mark.USC {
   color: #990000; }
 
 .page-header {
-    height: 100px;
+    height: 150px;
 }
+.project-name {
+    top: 80px;
+}
+.tagline {
+    top: 110px;
+}
+    
 </style>
 <html lang="en-US">
   <head>
@@ -122,13 +129,13 @@ mark.USC {
     <section class="page-header" style="background-image: url('/website/assets/mathwallpaper.jpg')"> 
     <h2 class="project-tagline" style="color:#069">{{ page.description }}</h2>
     -->
-    <section class="page-header" style="background-image: url('/website/assets/background.png')" height=200px>     
-    <!--
+    <section class="page-header" style="background-image: url('/website/assets/background.png')">     
     <h1 class="project-name">{{ page.title }}</h1>
     <h2 class="tagline">{{ page.description }}</h2>
-    -->
+    <!--
     <h1 class="project-name">GHBCode's Site</h1>
     <h2 class="tagline">Notes on Comp Sci, Math, Data Analysis, Python and Misc</h2>
+    -->
     <!-- <a href="https://github.com/ghbcode/website" class="btn">View on GitHub</a> -->       
     </section>
     <br>
