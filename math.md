@@ -1,7 +1,7 @@
 ---
 layout: default_sidebar
 title: Topics in Math
-description: posted by ghbcode on 2014/05/13
+description:
 ---
 
 As with the other sections this Math page contains various resources for my reference. Some of these topics are strictly about Math, some are about Finance and some are a combination including their application in Python.
