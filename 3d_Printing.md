@@ -1,8 +1,5 @@
 ---
 layout: default_sidebar
-title: GHBCode's Site2
-description: Notes on Comp Sci, Math, Data Analysis, Python and Misc6
-toc: True
 ---
 
 ### 3D Printing
