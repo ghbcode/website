@@ -1,5 +1,6 @@
 ---
 layout: default_sidebar
+title: 3D Printing and Such
 ---
 
 ### 3D Printing
