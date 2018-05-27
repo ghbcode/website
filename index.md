@@ -1,8 +1,7 @@
 ---
 layout: default_sidebar
 title: GHBCode's Site
-description: Notes and samples on Math, Machine Learning and Python
-toc: True
+description: Notes on Comp Sci, Math, Data Analysis, Python and Misc
 ---
 
 ### Who am I? 
