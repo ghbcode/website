@@ -5,7 +5,7 @@ description: Notes on Comp Sci, Math, Data Analysis, Python and Misc
 ---
 
 ### Who am I? 
-I am a father and a working professional with a Master's degree in Financial Engineering. My professional career has included work in consulting, prime brokerage and the quant fund industries. My interests are varied although they often lie in the areas of Math and Science. When I'm not working or taking care of my daughter I work on many projects including lots of home improvement, building things, some carpentry, 3D printing, some welding and the occasional arduino yun project. I have always been and will remain to be an avid student and these pages are meant to keep track of important topics. So there will surely be many changes along the way...
+I am a father and a working professional with a Master's degree in Financial Engineering. My professional career has included work in consulting, prime brokerage and the quant fund industries. My interests are varied although they often lie in the areas of Math and Science. When I'm not working or taking care of my daughter, I work on many projects including lots of home improvement, building things, some carpentry, 3D printing, some welding and the occasional arduino yun project. I have always been and will remain to be an avid student and these pages are meant to keep track of important topics. So there will surely be many changes along the way...
 
 * [Email](mailto:ghbcode@gmail.com)
 * [LinkedIn](https://www.linkedin.com/in/gonzalobricenosf)
@@ -38,3 +38,4 @@ I am a father and a working professional with a Master's degree in Financial Eng
 * [Econ Browser](http://econbrowser.com/)
 * [Makezine - Arduino](https://makezine.com/category/technology/arduino/)
 * [MatterHackers Articles](https://www.matterhackers.com/articles/)
+* [Quantitative Trading with Robert Carver](https://qoppac.blogspot.com/2015/12/pysystemtrade.html)
