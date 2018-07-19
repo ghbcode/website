@@ -17,4 +17,3 @@ As with the other sections this Math page contains various resources for my refe
 * [Time Series Analysis - includes regression, ARIMA and ARCH/GARCH](/website/notebooks/TS.html)
 * [GARCH 1,1](/website/notebooks/GARCH-1-1.html)
 * [Principal Component Analysis for dimensionality redux](/website/notebooks/pca.html)
-* [PCA on a set of stocks](/website/notebooks/PCA on a set of stocks.ipynb)
