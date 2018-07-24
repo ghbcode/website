@@ -12,6 +12,7 @@ Troubleshooting Code - timing, profiling and tracing
   - [Timing your code](/website/notebooks/Profiling-code.html)
   - [How to profile your code](/website/notebooks/Profiling-code.html#profiling-code)
   - [Troubleshoot using pdb](/website/notebooks/Profiling-code.html#tracing-code)
+  - [Further troubleshooting notes](/website/notebooks/Reference - Troubleshooting Paths Introspection.html)
   - [Logging results for better code](/website/notebooks/Logging.html)  
 
 Other topics
