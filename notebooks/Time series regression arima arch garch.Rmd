@@ -1,0 +1,605 @@
+---
+title: "FBE 543 Project - Spring 2018"
+author: "Gonzalo Briceno"
+#date: "March 15, 2018"
+output: 
+  html_document:
+    highlight: tango
+    theme: united
+    toc: yes
+---
+
+**Quick notes before you start**
+
+* Because the Fama French 3 factor data was not available for 3/2018 on time, I will do a three period ahead forecast for Dec 2017, Jan 2018 and Feb 2018.
+* Fama French MRP uses the risk free rate (RF). My risk premiums are using the ^TNX bond. So I averaged both rates when adding back the risk free rate to the CAPM calculated risk premiums.
+* I did not get high/low figures for my stock data so for Part 9 I did not do the ln(high/low) calculation of volatility. 
+
+# Part 1
+
+```{r, Part 1 - Download data}
+warnings = FALSE
+
+library(corpcor)
+library(tseries)
+library(quantmod)
+library(forecast)
+
+# Download stock and bond data
+start_date = "2013-01-01"
+end_date = "2018-03-31"
+invest_date = "2014-01-01"
+
+getSymbols("AAPL", from=start_date, to=end_date)
+maapl<-to.monthly(AAPL)
+aapl<-(maapl$AAPL.Adjusted)
+
+getSymbols("AMZN", from=start_date, to=end_date)
+mamzn<-to.monthly(AMZN)
+amzn<-(mamzn$AMZN.Adjusted)
+
+getSymbols("GOOG", from=start_date, to=end_date)
+# Convert to monthly
+mgoog<-to.monthly(GOOG)
+goog<-(mgoog$GOOG.Adjusted)
+
+getSymbols("GS", from=start_date, to=end_date)
+mgs<-to.monthly(GS)
+gs<-(mgs$GS.Adjusted)
+
+getSymbols("MSFT", from=start_date, to=end_date)
+mmsft<-to.monthly(MSFT)
+msft<-(mmsft$MSFT.Adjusted)
+
+# get the bond
+getSymbols("^TNX", from=start_date, to=end_date)
+mbond=to.monthly(TNX)
+bond<-na.fill((mbond$TNX.Adjusted), fill="left")
+rbond=matrix(bond/1200)
+```
+
+```{r, Part 1 - Compute returns and risk premia}
+# Generate monthly returns
+raapl=diff(log(aapl))
+ramzn=diff(log(amzn))
+rgoog=diff(log(goog))
+rgs=diff(log(gs))
+rmsft=diff(log(msft))
+
+# Generate monthly market risk premium for each asset
+rpaapl=raapl-rbond
+rpamzn=ramzn-rbond
+rpgoog=rgoog-rbond
+rpgs=rgs-rbond
+rpmsft=rmsft-rbond
+
+# data tables
+data_ret_rp = data.frame(raapl,ramzn,rgoog,rgs,rmsft,rbond,rpaapl,rpamzn,rpgoog,rpgs,rpmsft)
+colnames(data_ret_rp) <- c("rAAPL", "rAMZN", "rGOOG", "rGS", "rMSFT", "bond", "rpAAPL", "rpAMZN", "rpGOOG", "rpGS", "rpMSFT")
+
+# Define corresponding sets of data to avoid having to keep indexing. [1] is 1/2013, [62] is 3/2018 and [58] is 11/2017
+data_ret_rp_2013 <- data_ret_rp[2:12,] # this is the 2/2013 through 12/2013 to calculate the optimal weights
+data_ret_rp_train <- data_ret_rp[13:59,] # this is the 2014 through 11/2017 to forecast
+data_ret_rp_test <- data_ret_rp[60:62,] # this is the 12/2017 to 2/2018 period
+
+range.names = c("AAPL", "AMZN", "GOOG", "GS", "MSFT")
+```
+
+# Part 2
+
+```{r, Part 2 - Functions used for MPT}
+# Calculate the weights for optimal risk vs. return
+weights <- function(ret_calc, bond_calc) {
+  covariance_matrix = matrix(c(cov(ret_calc)),nrow=5, ncol=5)
+  mean_returns = matrix(colMeans(x=ret_calc, na.rm = TRUE))
+  mean_bond = mean(bond_calc)
+  mean_rp_returns = mean_returns - mean_bond
+  w = matrix(solve(covariance_matrix) %*% mean_rp_returns)
+  sw = sum(w)
+  nw = w/sw
+  return(nw)
+}
+
+# Calculate portfolio monthly returns
+# USAGE: pfol_returns(weights, ret_calc)
+pfol_returns_monthly <- function(weights, ret_calc) {
+    return(t(weights) %*% t(ret_calc))
+}
+```
+
+```{r}
+# Calculate the weights - will not rebalance due to large short positions suggested in 2015 and 2016
+ret_13 = data_ret_rp_2013[,1:5]
+bond_13 = data_ret_rp_2013[,6]
+w_13 = weights(ret_13, bond_13)
+# ret_14 = data_ret_rp[12:23,]
+# bond_14 = rbond[12:2]
+# w_14 = weights(ret_14, bond_14)
+
+sprintf("Below are the weights in the order AAPL, AMZN, GOOG, GS and MSFT")
+w_13
+```
+
+# Part 3
+
+```{r, Part 3}
+# Put all of the return, risk premium and Fama French information in one place
+pfol_ret_train = pfol_returns_monthly(w_13, data_ret_rp_train[,1:5]) # pfol returns
+pfol_ret_rp_train = pfol_returns_monthly(w_13, data_ret_rp_train[,7:11]) # pfol returns - risk free rate
+pfol_ret_test = pfol_returns_monthly(w_13, data_ret_rp_test[,1:5]) # pfol returns
+pfol_ret_rp_test = pfol_returns_monthly(w_13, data_ret_rp_test[,7:11]) # pfol returns - risk free rate
+pfol_ret_train <- ts(pfol_ret_train, start=2014, frequency=12)
+pfol_ret_rp_train <- ts(pfol_ret_rp_train, start=2014, frequency=12)
+pfol_ret_test <- ts(pfol_ret_test, start=2017-12-01, frequency=12)
+pfol_ret_rp_test <- ts(pfol_ret_rp_test, start=2014-12-01, frequency=12)
+
+data_ret_rp_train$pfol = t(pfol_ret_train)
+data_ret_rp_train$pfol_rp = t(pfol_ret_rp_train)
+data_ret_rp_test$pfol = t(pfol_ret_test)
+data_ret_rp_test$pfol_rp = t(pfol_ret_rp_test)
+
+FF <- read.csv(file="F-F_Research_Data_Factors.CSV", header=TRUE, sep=",")
+
+data_ret_rp_train$MRP = FF[13:59,2]/100
+data_ret_rp_train$SMB = FF[13:59,3]/100
+data_ret_rp_train$HML = FF[13:59,4]/100
+data_ret_rp_train$RF = FF[13:59,5]/100
+
+data_ret_rp_test$MRP = FF[60:62,2]/100
+data_ret_rp_test$SMB = FF[60:62,3]/100
+data_ret_rp_test$HML = FF[60:62,4]/100
+data_ret_rp_test$RF = FF[60:62,5]/100
+
+write.csv(data_ret_rp_train, 'out_ret_rp_train.csv')
+write.csv(data_ret_rp_test, 'out_ret_rp_test.csv')
+
+initial_investment = 100
+sprintf("Cummulative portfolio returns from 2014 through 11/2017 are %#.4f", sum(pfol_ret_train))
+sprintf("With an initial investment of $%#.2f, your total portfolio value as of 12/1/2017 is $%#.2f", initial_investment, 100*(1+sum(pfol_ret_train)))
+
+pfol_ret = ts(data_ret_rp_train$pfol, start=2014, frequency=12)
+```
+
+# Part 4
+
+```{r, Part 4: CAPM}
+library(forecast)
+reg_CAPM <- lm(pfol_rp~MRP, data=data_ret_rp_train)
+summary(reg_CAPM)
+
+# will use the forecast +- 1.96 * standard error formula for computing the 95% confidence interval.
+pred <- predict(reg_CAPM, newdata=data_ret_rp_test, se.fit = TRUE, interval="confidence", level = 0.95)
+pred
+accuracy(forecast(reg_CAPM, newdata =data_ret_rp_test,  h=3))
+```
+
+The regression and the MRP coefficient are significant. The forecasts and 95% confidence interval (Lower and Upper columns) are in the table below where I remove the intercept from the forecast.
+
+## CAPM Results
+
+The CAPM regression is 
+$$Pfol_{risk premium} = \beta MRP = \beta Market_{return} - r_f$$ 
+so we have to add the bond back to the portfolio risk premium in order to get the portfolio returns. 
+
+| Date        | Forecast (RP)	| Forecast Return	| Lower	| Upper	| Actual Return | Forecast/Actual |
+|-------------|:-------------:|:-----:|:-------:|:-------:|-----------------:|:-----------:|
+| 12/2017 | 0.0117	| 0.0131	| 0.0002	| 0.0261	| 0.0022 | 5.89 |
+| 1/2018 | 0.0614	| 0.0631	| 0.0384	| 0.0877	| 0.1290 | .49 |
+| 2/2018 | -0.0402	| -0.0385	| -0.0630	| -0.0140	| 0.0154 | -2.5 |
+
+```{r, Part 4: 3 Factor CAMP}
+reg_3fCAPM <- lm(pfol_rp~MRP+SMB+HML, data=data_ret_rp_train)
+summary(reg_3fCAPM)
+# will use the forecast +- 1.96 * standard error formula for computing the 95% confidence interval.
+pred <- predict(reg_3fCAPM, newdata=data_ret_rp_test, se.fit = TRUE, interval="confidence", level = 0.95)
+pred
+accuracy(forecast(reg_3fCAPM, newdata =data_ret_rp_test,  h=3))
+```
+
+The regression, MRP, SMB and HML coefficients are significant. 
+
+## 3 Factor CAPM Results
+
+The CAPM 3 factor regression is 
+$$Pfol_{risk premium} = \beta_1 MRP + \beta_2 SMB + \beta_3 HML$$
+so we have to add the bond back to the portfolio risk premium in order to get the portfolio returns. 
+
+| Date        | Forecast (RP)	| Forecast Return	| Lower	| Upper	| Actual Return | Forecast/Actual |
+|-------------|:-------------:|:-----:|:-------:|:-------:|-----------------:|:-----------:|
+| 12/2017 | 0.0231	| 0.0245	| 0.0135	| 0.0355	| 0.0022 | 11.0 |
+| 1/2018 | 0.1071	| 0.1087 |	0.0841	| 0.1334	| 0.1290 | .84 |
+| 2/2018 | -0.0399	| -0.0381	| -0.0584	| -0.0179	| 0.0154 | -2.47 |
+
+Neither the CAPM or 3 factor CAPM do good job of forecasting the portfolio returns. It is hard to say that the 3 factor CAPM is any better than the CAPM or the other way around. The 'forecast/actual' column shows this ratio and in the 12/2017 case the CAPM was less worse, in the 1/2018 case the 3 factor CAPM was better and in the 2/2018 case the 3 factor CAPM was marginally better. 
+
+# Part 5
+
+## Note:
+
+For the smoothing and ARIMA forecasts we are forecasting portoflio returns so there is no need to add back the bond.
+
+```{r, Part 5 - Naive}
+# 5: Naive forecast
+naive(pfol_ret, 3)
+plot(naive(pfol_ret, 3), xlab="Time")
+legend("topleft",lty=1, col=c(1,"black"), c("data"))
+accuracy(naive(pfol_ret, 3))
+```
+
+```{r, Part 5 - Ma3}
+#5: 3 period moving average
+period = 3
+ma3 <- ma(pfol_ret, order=period, centre=FALSE)
+plot(pfol_ret, col="black", main="Portfolio 3 period moving average", xlab="Time")
+lines(ma3, col="red")
+legend("topleft",lty=1, col=c(1,"black"), c("data"))
+predict(ma3, 4)
+accuracy(ma3, pfol_ret)
+```
+
+```{r, Part 5 - Ma5}
+#5: 5 period moving average
+period = 5
+ma5 <- ma(pfol_ret, order=period, centre=FALSE)
+plot(pfol_ret, col="black", main="Portfolio 3 period moving average", xlab="Time")
+lines(ma5, col="red")
+legend("topleft",lty=1, col=c(1,"black"), c("data"))
+predict(ma5, 5)
+accuracy(ma5, pfol_ret)
+```
+
+```{r, Part 5 - ES}
+# 5: Simple Exponential Smoothing
+alpha1 =.1
+alpha2 = .75
+fit1 <- ses(pfol_ret, alpha=alpha1, initial="simple", h=3)
+fit2 <- ses(pfol_ret, alpha=alpha2, initial="simple", h=3)
+plot(fit2, main="Simple Exponential Smoothing (no trend)", fcol="white", type="o")
+lines(fitted(fit1), col="blue", type="o")
+lines(fitted(fit2), col="red", type="o")
+lines(fit1$mean, col="blue", type="o")
+lines(fit2$mean, col="blue", type="o")
+legend("topleft",lty=1, col=c(1,"blue","red"), c("data", expression(alpha == alpha1), expression(alpha == alpha2)))
+#legend("topleft",lty=1, col=c(1,"red"), c("data", expression(alpha == .75)))
+summary(fit2)
+```
+
+```{r, Part 5 - Holt}
+# 5: Holt
+holt1 <- holt(pfol_ret, alpha=0.8, beta=0.2, initial="simple", exponential=FALSE, h=3) 
+plot(holt1, col="black", type="o")
+lines(fitted(holt1), col="red") 
+lines(holt1$mean, col="blue", type="o") 
+legend("topleft", lty=1, col=c("black","red"), c("Data","Holt's linear trend"))
+
+predict(holt1, n.ahead=3)
+accuracy(holt1)
+```
+
+```{r, Part 5 - Holt Winters}
+# 5: Holt Winters (seasonal) method
+hws1 <- hw(pfol_ret,seasonal="additive")
+# cannot run multiplicative model due to error: Inappropriate model for data with negative or zero values
+plot(hws1, type="o", col="black")
+lines(fitted(hws1), col="red", lty=1)
+lines(head(hws1$mean,3), type="o", col="blue")
+legend("topleft",lty=1, pch=1, col=c("black","red"), c("data","Holt Winters' Additive"))
+head(hws1$mean,3)
+accuracy(hws1)
+#states <- cbind(hws1$model$states[,1:3],hws2$model$states[,1:3])
+#colnames(states) <- c("level","slope","seasonal","level","slope","seasonal")
+#plot(states, xlab="Year")
+#hws1$model$state[,1:3]
+```
+
+# Part 6
+
+Do an ARIMA model of your portfolio returns and use it for three-period ahead forecasting of the returns to portfolio. Write confidence interval. Estimate the accuracy statistics.
+
+```{r, Part 6 - ARIMA plot of price}
+plot(pfol_ret, main="Monthly Portfolio Returns")
+```
+
+Portfolio returns look random but lets check with ACF/PACF
+
+```{r, Part 6 - ARIMA ACF/PACF, ADF}
+#Testing portfolio price for Stationarity
+par(mfrow=c(1,2))
+acf(pfol_ret,main="ACF")
+pacf(pfol_ret,main="PACF")
+#Unit Root Test on portfolio price
+adf.test(pfol_ret)
+```
+
+According ACF/PACF and the augmented Dickey Fuller test the returns are stationary. According to the ACF/PACF and using the parsimony principle, the model is ARIMA(1,0,1) on the returns. 
+
+```{r, Part 6 - Estimate ARIMA}
+fit_arima <- arima(pfol_ret, order=c(1, 0, 1))
+summary(fit_arima)
+library(lmtest)
+coeftest(fit_arima)
+```
+
+```{r, Part 6 - Diagnose ARIMA}
+#Step 3, Diagnostics: Residuals Test
+res <- fit_arima$residuals
+par(mfrow=c(1,2))
+acf(res,main="ACF of Residuals")
+pacf(res,main="PACF of Residuals")
+adf.test(res)
+plot(res, type="o")
+Box.test(res,type='Ljung',lag=log(length(res)))
+```
+The residuals look like white noise/random. The Box-Ljung test also accepts that the residuals are random. 
+
+```{r, Part 6 - Try Auto-ARIMA}
+# Auto ARIMA
+fit_auto <- auto.arima(pfol_ret)
+summary(fit_auto)
+
+res <- fit_auto$residuals
+par(mfrow=c(1,2))
+acf(res,main="ACF of Residuals")
+pacf(res,main="PACF of Residuals")
+adf.test(res)
+plot(res, type="o")
+checkresiduals(fit_auto)
+```
+
+Following the parsimony principle, I will chose the Auto ARIMA(0,0,1) model on portfolio returns (ARIMA(0,1,1) on price). The MA coefficient is significant at the 95% level. The residuals of the model are stationary and appear to be white noise. 
+
+
+```{r, Part 6 - Forecast}
+forecast <- forecast(fit_auto, h=3, level = 0.95)
+plot(forecast)
+predict(fit_auto, newdata=data_ret_rp_test, n.ahead=3, interval="confidence", level = 0.95)
+accuracy(forecast)
+```
+## ARIMA Forecast Results
+
+The ARIMA forecast is slighlty better than the CAPM and 3 factor CAPM since the forecasts came closer to the actual. Though it is worth noting that the confidence intermal in the CAPM models is tighter than that of the ARIMA model. 
+
+|	Date |	Forecast Return	|	Std. Error	|	Lower	|	Upper	|	Actual Return	|	Forecast/Actual	|
+|-------------|:-------------:|:-----:|:-------:|:-------:|:--:|:--:|
+|	12/2017 |	0.007256747	|	0.05047152	|	-0.091667432	|	0.106180926	|	0.002228345	|	3.256564212	|
+|	1/2018 |	0.014853294	|	0.05622285	|	-0.095343492	|	0.12505008	|	0.128970138	|	0.115168474	|
+|	2/2018 |	0.022296242	|	0.05622285	|	-0.087900544	|	0.132493028	|	0.01541726	|	1.446187091	|
+
+```{r}
+# Fit ARIMA(1,0,1) with the first lag of the variable
+fit_arima_l1 <- arima(pfol_ret, xreg = cbind(data_ret_rp_train$MRP,data_ret_rp_train$SMB,data_ret_rp_train$HML), order=c(1, 0, 1))
+summary(fit_arima_l1)
+coeftest(fit_arima)
+forecast_arima_l1 <- forecast(fit_arima_l1, xreg=cbind(data_ret_rp_test$MRP,data_ret_rp_test$SMB,data_ret_rp_test$HML))
+plot(forecast_arima_l1)
+#predict(fit_auto, newdata=data_ret_rp_test, n.ahead=3, interval="confidence", level = 0.95)
+accuracy(forecast_arima_l1)
+```
+
+
+# Part 7
+
+```{r, Part 7 - fit ARIMA models}
+#7. Test your ARIMA model for the stability of the ARIMA coefficients.
+#2- Coefficients of ARIMA are stable.  To test for the stability of the coefficients, split data, run two ARIMA and do an F test.  
+# per https://www.stata.com/manuals13/rhausman.pdf
+  #The null hypothesis is that the estimator θb2 is indeed an efficient (and consistent) estimator of the true parameters. If this is the case, there should be no systematic difference between the two estimators. 
+
+fit1 = auto.arima(pfol_ret[1:12])
+summary(fit1)
+fit2 = auto.arima(pfol_ret[13:46])
+summary(fit2)
+```
+
+An F test doesn't have to be conducted because an Auto ARIMA on an equal split of the portfolio results in a different order model. So that is the very defintion of unstable coefficients. 
+
+$F = \frac{(SSR_T – SSR_1 – SSR_2)/k}{(SSR_1 + SSR_2)/(T – 2k)}$, T is sample size and K = p + q + 1
+
+```{r, Part 7 - run F test}
+ssr_t = sum(fit_auto$residuals^2)
+ssr_1 = sum(fit1$residuals^2)
+ssr_2 = sum(fit2$residuals^2)
+K = 0 + 1 + 1
+T = length(pfol_ret)
+F = ((ssr_t - ssr_1 - ssr_2)/K) / ((ssr_1 + ssr_2)/(T - 2*K))
+F
+
+# Hausman Test for endogenity of regressors: Ho: Coefs are the same,  Ha: Coefs are different 
+# CANNOT SOLVE because fit1 and fit2 are different order models so second line below fails.
+# cf_diff <-  coef(fit1) - coef(fit2)
+# vc_diff <-  vcov(fit1) - vcov(fit2)
+# z_diff <-  as.vector(t(cf_diff)%*%solve(vc_diff)%*%cf_diff)
+# pchisq(z_diff, df=2, lower.tail=FALSE)
+```
+
+The F-value is greater than the F-statistic so I can reject the null that the coefficients are the same. Also, I cannot run a Hausman test because the order of the split ARIMA models is not the same. So clearly the coefficients are not stable. 
+
+# Part 8
+
+```{r, Part 8 - Test existence of ARCH/GARCH}
+#8. Test your ARIMA model for the existence of ARCH and GARCH and do proper corrections, if needed.
+#find the best ARIMA and take error
+auto_arima_squared_residuals = fit_auto$residuals^2 #square best ARIMA error
+par(mfrow=c(1,2))                                   #do ACF/PACF of square of error of ARIMA
+acf(auto_arima_squared_residuals, main="ACF")       #if it is AR(1) or AR(2) then it is ARCH
+pacf(auto_arima_squared_residuals, main="PACF")     #if it is ARMA(1,1) then it is GARCH
+
+fit_auto_arima_squared_residuals <- auto.arima(auto_arima_squared_residuals)  #instead of ACF/PACF you can do auto.ARIMA
+summary(fit_auto_arima_squared_residuals)
+
+checkresiduals(fit_auto_arima_squared_residuals)
+```
+According to the ACF/PACF of the squared residuals the model is ARMA(0,0). The auto ARIMA method also results in an ARMA(0,0) model. Therefore, there does not appear to be ARCH or GARCH in the portoflio returns. According to the Ljung-Box test the ARIMA model's squared residuals are white noise. White noise residuals do not directly relate to ARCH or GARCH but give further proof that the error is randomly distributed. 
+
+#Part 9
+
+```{r, Part 9 - Historical volatility}
+#9. Find different time-series measures of volatility for your portfolio returns (see the volatility file posted on Blackboard) and do a three-period ahead forecasting of the portfolio volatility.
+historical_var <-var(pfol_ret)
+sprintf("Historical variance is %#.4f", historical_var)
+```
+
+```{r, 9 - R^2 volatility}
+r2_var <- pfol_ret^2
+plot(r2_var, type="l", main="Volatility Measured by r^2", ylab="returns squared")
+
+par(mfrow=c(1,2))
+acf(r2_var)
+pacf(r2_var)
+# Suggest an ARIMA(0,0,0) model
+
+#Auto ARIMA fitted to R^2 measure of variance.
+fitr2v <- auto.arima(r2_var)
+fitr2v
+```
+
+```{r}
+#Forecasting volatility using R^2.
+#fitr2v <- arima(r2_var, order=c(1, 0, 1))
+fcastr2v <- forecast(fitr2v, h=3) 
+plot(fcastr2v, type="l", ylab="returns squared")
+fcastr2v
+```
+
+```{r, Part 9 - SES volatility}
+# Cannot do the ln(high/low) method since I don't have high and low data. Will substitute with ES
+esv <- ses(r2_var, alpha = .8)
+esvf <- esv$fitted
+plot(esvf, type="l", main="Volatility Measured as Exponential Smoothing of r^2", ylab="returns squared")
+
+#Forecasting volatility using SES of R^2.
+fcastr2ses <- forecast(esv, h=3)
+plot(fcastr2ses, type="l", ylab="returns squared")
+fcastr2ses
+```
+
+```{r, Part 9 - Compare Volatility Measures}
+m <- cbind(r2_var, esvf)
+cor(m)
+```
+
+For R^2 auto ARIMA suggested an (0,0,0) flat model which was very similar to the SES model. Both have a mean very close to the historical volatility of .003.
+
+# Part 10 - Comparison of tecniques
+
+```{r, 10}
+#10. Use the accuracy statistics of the different forecasting techniques to decide which technique fits the data best.
+# Source:  https://www.otexts.org/fpp/2/5
+```
+
+| Method |     ME   |     RMSE   |      MAE   |    MPE   |   MAPE   |    MASE   |
+|---------|----------|------------|------------|---------|----------|-----------|
+|	CAPM	|	9.24E-19	|	0.0443573	|	0.03493115	|	29.38372	|	149.9925	|	0.7755625	|
+|	CAPM 3	|	-1.11E-19	|	0.03274015	|	0.02606064	|	124.1033	|	150.538	|	0.5786142	|
+|	Naïve	|	0.001464876	|	0.08904283	|	0.07510783	|	-8.307972	|	431.1503	|	0.9903769	|
+|	Ma3	|	0.001155313	|	0.05345471	|	0.04465934	|	-6.410823	|	235.1385	|	-0.6793237	|
+|	Ma5	|	-0.001673655	|	0.05397095	|	0.04455854	|	-51.67693	|	260.391	|	-0.4580408	|
+|	SES	|	0.002301682	|	0.07650081	|	0.06414185	|	-90.71479	|	425.2322	|	0.8457788	|
+|	Holt	|	-0.008856668	|	0.08690751	|	0.07432256	|	-189.7633	|	611.288	|	0.9800223	|
+|	Holt Winters	|	-0.002269473	|	0.04810524	|	0.03989932	|	-51.35075	|	349.7016	|	0.5261151	|
+|	ARIMA(0,0,1)	|	-0.002185112	|	0.04883408	|	0.03952355	|	17.01204	|	189.5377	|	0.5211602	|
+| ARIMA(1,0,1) + 3f CAPM | 2.663951e-05 | 0.03247008 | 0.02635677 | -41.85882 | 192.17 | 0.3475422 | 0.05395827|
+
+By almost all measures of accuracy but using only RMSE and MAE, the 3 factor CAPM is the best model. After that is the CAPM model and it is a close 3rd for the Holt Winters and ARIMA(0,0,1). 
+
+# Part 11
+
+```{r, 11 EMH}
+#11 Test whether your portfolio conforms to the efficient market hypothesis.
+pfol_ret_lag = c(pfol_ret[-1],0)
+emh <- data.frame(pfol_ret, pfol_ret_lag)
+reg_emh <- lm(pfol_ret~pfol_ret_lag, data=emh)
+summary(reg_emh)
+```
+
+According to the regression, since both coefficients are significant we cannot say that the portfolio conforms to the efficient market hypothesis (that $\alpha_0 = 0$ and $\gamma = 0$).
+
+# Part 12
+
+```{r, 12}
+#12. Find 1% and 3% monthly and daily VaR of your portfolio.
+as.year <- function(x) as.numeric(floor(as.yearmon(x)))
+yearsum <- as.ts(aggregate(as.zoo(pfol_ret), as.year, sum))
+annual_pfol_ret = mean(yearsum)
+annual_pfol_stdev = sd(yearsum)
+monthly_pfol_ret = annual_pfol_ret/12
+monthly_pfol_stdev = annual_pfol_stdev/sqrt(12)
+daily_pfol_ret = annual_pfol_ret/250
+daily_pfol_stdev = annual_pfol_stdev/sqrt(250)
+
+sprintf("Daily 3 percent VaR is %#.4f", daily_pfol_ret-(2.17009*daily_pfol_stdev))
+sprintf("Daily 1 percent VaR is %#.4f", daily_pfol_ret-(2.57583*daily_pfol_stdev))
+sprintf("Monthly 3 percent VaR is %#.4f", monthly_pfol_ret-(2.17009*monthly_pfol_stdev))
+sprintf("Monthly 1 percent VaR is %#.4f", monthly_pfol_ret-(2.57583*monthly_pfol_stdev))
+
+```
+
+Assuming a normal distribution the 3% confidence lies at 2.17009 standard deviations and at the 1% that figure is 2.57583. The historical VaR results are above. For example, a 1M USD portfolio has a daily 3% VaR of -$26,400 or more. 
+
+# Part 13
+
+```{r, 13 }
+#13. Estimate VAR of your portfolio and S&P 500 and graph the Impulse Response Functions.
+require(vars)
+sp <- read.csv(file="^GSPC.csv", header=TRUE, sep=",")
+sp <- diff(log(sp$Close))
+sp <- ts(sp, frequency=12, start=2014)
+data <- cbind(pfol_ret, sp)
+#head(data,5)
+
+#Model Selection Based on AIC, Hannan Quinn (HQ), Schwarz Criteria(SC, SBC) and 
+#Final Prediction Error (FPE) 
+lagselect <- VARselect(data, lag.max=8, type="const")$selection
+lagselect
+
+#Run VAR with one lag.
+var <- VAR(data, p=2, type="const")
+summary(var)
+
+#Test for serial correlation of errors in VAR models: Ho: No Serial Correlation.
+SerialCo_Test<- serial.test(var, lags.pt=10, type="PT.asymptotic")
+SerialCo_Test
+
+#Forecasting with VAR
+fcast <- forecast(var, h=8)
+par(mfrow=c(2, 1))
+plot(fcast)
+```
+
+
+```{r, Part 13 - Impulse Response Function}
+#Inpulse Response Function of the effect one std. dev. shock to sp on pfol_ret and vice versa.
+IRF <- irf(var, impulse.variable = "sp", response.variable = "pfol_ret",  boot=TRUE, t = NULL, nhor = 20, ci=.95, scenario = 2, draw.plot = TRUE, t=NULL)
+IRF
+plot(IRF)
+```
+
+I chose an estimated VAR model of order 2 because when I attemped an order 1 only the 'const' parameter was significant. The effect of a positive shock to the portfolio shows a small positive change to the S&P 500. A shock to the S&P 500 has a small change to the portfolio and this is most likely due to the hedging effect applied via the optimization of the weights.
+
+
+# Conclusion
+
+The accuracy measures tell you the in-sample accuracy and using RMSE and MAE the 3 factor CAPM model was the the best. This can be apprecciated in the second graph below. After that were the CAPM and the Holt Winters and ARIMA(0,0,1) were in third place. 
+
+In terms of the three period forecasts, none of the methods did great. The best two were the 3 factor CAPM and the ARIMA(0,0,1) method with the ARIMA being the better one as you can see in the table below. It is worth noting that the ARIMA model has a wider confidence interval than the 3 factor CAPM model. Also the ARIMA model does not have ARCH/GARCH so in the period studied there was no volatility clustering. 
+
+
+Finally, the portfolio does not conform to the EMH so there seems to be some stuctural movement of the portfolio returns but not to a degree where a simple model such as CAPM or 3 factor CAPM comes close enough to forecasting it well.
+
+| Date    | 3 Factor CAPM	Forecast | ARIMA Forecast	| Actual Return | 
+|---------|:-----:|-----------------:|:-------------:|
+| 12/2017 | 0.0231	| 0.007256747	|	0.0022 |
+| 1/2018 | 0.1071 | 0.014853294	| 0.1290 |
+| 2/2018 | -0.0399	| 0.022296242	| 0.0154 |
+```{r}
+par(mfrow=c(2,1))
+ts.plot(pfol_ret, reg_CAPM$fitted.values, gpars = list(col = c("black", "green")), main="Portfolio vs CAPM(green)")
+ts.plot(pfol_ret, reg_3fCAPM$fitted.values, gpars = list(col = c("black", "blue")), main="Portfolio vs 3 Factor CAPM(blue)")
+```
+
+```{r}
+par(mfrow=c(2,1))
+ts.plot(pfol_ret, fit_auto$fitted, gpars = list(col = c("black", "orange")), main="Portfolio vs ARIMA(orange)")
+ts.plot(pfol_ret, hws1$fitted, gpars = list(col = c("black", "purple")), main="Portfolio vs Holt W.(purple)")
+```
+
