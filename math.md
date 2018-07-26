@@ -17,4 +17,4 @@ As with the other sections this Math page contains various resources for my refe
 * [Time Series Analysis - includes regression, ARIMA and ARCH/GARCH](/website/notebooks/TS.html)
 * [GARCH 1,1](/website/notebooks/GARCH-1-1.html)
 * [Principal Component Analysis for dimensionality redux](/website/notebooks/pca.html)
-* [Investment Factor Analysis](/website/notebooks/FactorInvestingExercise.html)
+* [Investment Factor Analysis](https://github.com/ghbcode/website/blob/master/notebooks/Factor%20Investing%20Exercise.ipynb)
