@@ -14,3 +14,4 @@ I've printed a bunch of toys with this printer and lately lots of tools such as 
 * added supports for better routing of the cables
 * printed a couple of useful tool holders and adjustment tools
 * made a few updates to the firmware as per this [Marlin page](https://github.com/arunoda/marlin)
+  * for the commands to move the extruder to the left front, right rear, etc., changed the timing when the screen goes back to the main menu. Previously it was too fast like 5 seconds, so I changed it to 30. 
