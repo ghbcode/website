@@ -14,7 +14,7 @@ There are various ways to categorize machine learning methods but a common way t
     * Data pre-processing
     * Other topics
   * [Bayes, MLE and MAP Preliminaries](https://github.com/ghbcode/website/blob/master/notebooks/SL01 Bayes, MLE and MAP.ipynb)
-  * [Linear Regression using Ordinary Least Squares and the Normal Equation](/website/notebooks/linear-regression-ols-normal-equation.html), 
+  * [Linear Regression using Ordinary Least Squares and the Normal Equation](https://github.com/ghbcode/website/blob/master/notebooks/SL02 Linear Regression OLS.ipynb), 
   * Linear Regression with Regularization
     * [Ridge (l2) Regression](https://github.com/ghbcode/website/blob/master/notebooks/SL02 Linear Regression OLS.ipynb)
     * [Lasso(l1) Regression](https://github.com/ghbcode/website/blob/master/notebooks/SL04 Lasso L1 Regression.ipynb)
