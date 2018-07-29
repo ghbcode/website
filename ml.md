@@ -22,7 +22,7 @@ There are various ways to categorize machine learning methods but a common way t
   * [Logistic Regression Classification](https://github.com/ghbcode/website/blob/master/notebooks/SL06 Logistic Regression Classification.ipynb)
   * [Naive Bayes Classification](https://github.com/ghbcode/website/blob/master/notebooks/SL07 Naive Bayes Classification.ipynb)
   * [Decision Trees (CART)](https://github.com/ghbcode/website/blob/master/notebooks/SL08 Decision Trees -CART.ipynb)
-  * [Support Vector Machine (SVM)](https://github.com/ghbcode/website/blob/master/notebooks/SL09 Support Vector Machine (SVM).ipynbl)
+  * [Support Vector Machine (SVM)](https://github.com/ghbcode/website/blob/master/notebooks/SL09 Support Vector Machine (SVM).ipynb)
   * [Ensemble Methods](https://www.analyticsvidhya.com/blog/2015/09/questions-ensemble-modeling/)
     * [Random Forest](https://github.com/ghbcode/website/blob/master/notebooks/SL10 Random Forest.ipynb)
     * [Boosting using AdaBoost](https://github.com/ghbcode/website/blob/master/notebooks/SL11 Boosting with AdaBoost.ipynb) 
@@ -34,7 +34,7 @@ There are various ways to categorize machine learning methods but a common way t
 * **Unsupervised Learning** - tries to find some sort of structure in the data. Depends heavily on similarity (ex: distance) and/or dissimilarity measures (ex: inverse distance)
   * [More on Unsupervised Learning](https://github.com/ghbcode/website/blob/master/notebooks/SL13 Unsupervised Learning.ipynb)
   * [K-Means to find subsets in the data](https://github.com/ghbcode/website/blob/master/notebooks/SL14 USL K-Means Clustering.ipynb)
-  * [PCA to reduce dimensionality](https://github.com/ghbcode/website/blob/master/notebooks/Sl15 USL Principal Component Analysis.ipynb)
+  * [PCA to reduce dimensionality](https://github.com/ghbcode/website/blob/master/notebooks/SL15 USL Principal Component Analysis.ipynb)
 * **Deep Learning** - A method that improves on traditional machine learning methods, Deep Learning makes use of neural networks that essentially give the algorithm the ability to process the data in a non-linear fashion. This often results in a performance that beats traditional methods although this comes at the expense of complexity and needing large amounts of data.
   * [Introduction to Deep Learning using Tensorflow](/website/notebooks/deep-learning.html)
 
