@@ -96,7 +96,7 @@ you should get the result
 
 To avoid any issues with clashing requirement versions I will place this code it its own Docker container. Admittedly, this could very well run on its own virtualenv. I picked Docker since I'm using it more and more nowadays though I admit it is overkill. 
 
-- Create the file Dockerfile
+- Create the file Dockerfile<br>
 This is where the Docker image is created, updated and run. 
 Make sure that the EXPOSE command points to the port where server.py choses to run in.
 
@@ -106,7 +106,7 @@ EXPOSE 8015
 CMD ["python", "./server.py"]
 ```
 
-- Create the requirements.txt file
+- Create the requirements.txt file<br>
 This will be used to install the required packages into the Docker image.
 
 ```
@@ -130,5 +130,6 @@ The *docker ps* command on the host will tell you if the container is running an
     8015->8015/tcp
 
 ### Resources
+
 * Following the topic of encapsulation, often times you will create multiple Docker containers that will work together to create an application. Think for example creating a Docker container for the Database end and another for the code. The following link has a very good article and the food truck example shows two Docker containers working in unison to provide functionality: [Docker for Beginners](https://docker-curriculum.com/)
 * The following link has very good [post install settings to consider when you are using Linux](https://docs.docker.com/install/linux/linux-postinstall/)
