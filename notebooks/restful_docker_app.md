@@ -121,7 +121,9 @@ requests
 
 The build command will download the python 3 image which is about 690MB in size as well as update packages via the requirements.txt file. Once it is done you may run the image as follows:
 
-    docker run -p 8015:8015 --rm ghbcode/flasktest:latest
+```
+docker run -p 8015:8015 --rm ghbcode/flasktest:latest
+```
 
 You should be able to access this service via http://x.x.x.x:8015/Outlier/test_id/150/ where x.x.x.x is the IP of the machine(host) running the Docker image. 
 
