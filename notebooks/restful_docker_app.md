@@ -148,4 +148,4 @@ The *docker ps* command on the host will tell you if the container is running an
 
 ### Resources
 * Following the topic of encapsulation, often times you will create multiple Docker containers that will work together to create an application. Think for example creating a Docker container for the Database end and another for the code. The following link has a very good article and the food truck example shows two Docker containers working in unison to provide functionality: [Docker for Beginners](https://docker-curriculum.com/)
-* This link has very good post install settings to consider when you are using Linux: (https://docs.docker.com/install/linux/linux-postinstall/)[https://docs.docker.com/install/linux/linux-postinstall/]
+* The following link has very good [post install settings to consider when you are using Linux](https://docs.docker.com/install/linux/linux-postinstall/)
