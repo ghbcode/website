@@ -1,4 +1,8 @@
-
+---
+layout: default_sidebar
+title: GHBCode's Site
+description: Notes on Comp Sci, Math, Data Analysis, Python and Misc
+---
 
 ## Macroeconomics
 
