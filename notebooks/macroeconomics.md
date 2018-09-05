@@ -118,4 +118,4 @@ Key concepts of macroeconomics:
 ### Example
 Below is a sample article regarding the August 22nd, 2018 FOMC meeting. Note how mention of several topics in this page appear on that article.
 
-[FOMC Minutes Preview: The Yield Curve Is Back In Focus](https://github.com/ghbcode/website/assets/FOMCMinutes20180822.pdf)
+[FOMC Minutes Preview: The Yield Curve Is Back In Focus (https://github.com/ghbcode/website/blob/master/assets/FOMCMinutes20180822.pdf)
