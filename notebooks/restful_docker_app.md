@@ -9,11 +9,11 @@ description: Notes on Comp Sci, Math, Data Analysis, Python and Misc
 The purpose of this code is to do the following using REST api endpoints:
 1. query the [plaid connect api](https://plaid.com/docs/legacy/api/#data-overview) and get transactions from a user 
 
-curl -X POST https://tartan.plaid.com/connect \
-   -d client_id=test_id \
-   -d secret=test_secret \
-   -d username=plaid_test \
-   -d password=plaid_good \
+curl -X POST https://tartan.plaid.com/connect 
+   -d client_id=test_id 
+   -d secret=test_secret 
+   -d username=plaid_test 
+   -d password=plaid_good 
    -d type=wells
    
 2. return a count of the transactions that are above a threshold amount.
