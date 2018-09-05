@@ -145,3 +145,7 @@ You should be able to access this service via http://x.x.x.x:8015/Outlier/test_i
 The *docker ps* command on the host will tell you if the container is running and the PORT. In my case it reads 
     
     8015->8015/tcp
+
+### Resources
+* Following the topic of encapsulation, often times you will create multiple Docker containers that will work together to create an application. Think for example creating a Docker container for the Database end and another for the code. The following link has a very good article and the food truck example shows two Docker containers working in unison to provide functionality: [Docker for Beginners](https://docker-curriculum.com/)
+* This link has very good post install settings to consider when you are using Linux: (https://docs.docker.com/install/linux/linux-postinstall/)[https://docs.docker.com/install/linux/linux-postinstall/]
