@@ -26,23 +26,6 @@ curl -X POST https://tartan.plaid.com/connect \
 from flask import Flask
 from flask_restful import Resource, Api
 
-'''
-This was a test given to me by Digit on 20180816
-The purpose is to do the following using rest api endpoints:
-1. query the plaid connect api and get transactions from a user
-
-https://plaid.com/docs/legacy/api/#data-overview
-
-curl -X POST https://tartan.plaid.com/connect \
-   -d client_id=test_id \
-   -d secret=test_secret \
-   -d username=plaid_test \
-   -d password=plaid_good \
-   -d type=wells
-2. return a count of the transactions that are above a threshold amount.
-
---------------------How to kill this server: lsof -ti :8015 | xargs kill
-'''
 class Outlier(Resource):
     def get(self, clientid, threshold):
         ''' Return a count of the transactions whose amount exceeds threshold amount.
