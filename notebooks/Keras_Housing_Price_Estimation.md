@@ -312,7 +312,7 @@ accuracy = make_scorer(accuracy_score, greater_is_better=True)
 ```
 
 
-![png](output_1_0.png)
+![png](../assets/keras01.png)
 
 
     For regression hese are the top 7 most important features:
@@ -429,7 +429,7 @@ plt.show()
 
 
 
-![png](output_4_1.png)
+![png](../assets/keras02.png)
 
 
 ## Prediction via Random Forest Regressor
@@ -546,7 +546,7 @@ plt.show()
 
 
 
-![png](output_7_1.png)
+![png](../assets/keras03.png)
 
 
 ## Conclusion 
