@@ -1,3 +1,8 @@
+---
+layout: default_sidebar
+title: Topics in Machine Learning
+description: posted by ghbcode on 2018/08
+---
 
 # Keras Machine Learning Exercise
 
