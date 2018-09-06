@@ -329,8 +329,8 @@ accuracy = make_scorer(accuracy_score, greater_is_better=True)
 ## Prediction via Sequential Neural Network
 
 This is a four layer sequential model with the input layer consisting of batch size equal to the length of samples and feature dimension equal to number of features (7). There are two middle layers and finally an output layer with one feature, the estimated home sale price. The model is trained with the parameters:
-* **loss function** is the mean squared error, i.e. $MSE = \frac{1}{n}\sum_{i=1}^n (Y_i - \hat{Y_i})^2$, where $Y_i$ is the true value and $\hat{Y_i}$ is the predicted value.
-* <a href="http://www.codecogs.com/eqnedit.php?latex=MSE&space;=&space;\frac{1}{n}\sum_{i=1}^{n}(Y_i&space;-&space;\hat{Y_i})^2" target="_blank"><img src="http://latex.codecogs.com/gif.latex?MSE&space;=&space;\frac{1}{n}\sum_{i=1}^{n}(Y_i&space;-&space;\hat{Y_i})^2" title="MSE = \frac{1}{n}\sum_{i=1}^{n}(Y_i - \hat{Y_i})^2" /></a>
+* **loss function** is the mean squared error whe Y_i is the true value and Y_i hat is the prediction<br>
+<a href="http://www.codecogs.com/eqnedit.php?latex=MSE&space;=&space;\frac{1}{n}\sum_{i=1}^{n}(Y_i&space;-&space;\hat{Y_i})^2" target="_blank"><img src="http://latex.codecogs.com/gif.latex?MSE&space;=&space;\frac{1}{n}\sum_{i=1}^{n}(Y_i&space;-&space;\hat{Y_i})^2" title="MSE = \frac{1}{n}\sum_{i=1}^{n}(Y_i - \hat{Y_i})^2" /></a>
 * **optimizer** is [RMSprop](https://keras.io/optimizers/#rmsprop).
 * **epochs** is important to set at more than 0 because epochs defines the number of iterations that the model applies. And with each iteration it improves the prediction. If you set epochs=0, you will get a somewhat normally distributed distribution (mean=some small positive number and sigma=some small positive number) which is totally incorrect because it allows for negative house sale prices and the magnitude of the prices is very low. 
 
