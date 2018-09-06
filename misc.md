@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default_sidebar
 title: Github Resources
 description: Notes on Github settings, etc.
 ---
