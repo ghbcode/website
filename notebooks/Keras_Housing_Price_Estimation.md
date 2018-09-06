@@ -4,6 +4,15 @@ title: Topics in Machine Learning
 description: posted by ghbcode on 2018/08
 ---
 
+latexImg = function(latex){
+
+    link = paste0('http://latex.codecogs.com/gif.latex?',
+           gsub('\\=','%3D',URLencode(latex)))
+
+    link = gsub("(%..)","\\U\\1",link,perl=TRUE)
+    return(paste0('![](',link,')'))
+}
+
 # Keras Machine Learning Exercise
 
 Compare the prediction of house sale prices using a random forest regressor (sklearn.ensemble.RandomForestRegressor) and a sequential neural network (keras.models.Sequential).
@@ -330,6 +339,7 @@ accuracy = make_scorer(accuracy_score, greater_is_better=True)
 
 This is a four layer sequential model with the input layer consisting of batch size equal to the length of samples and feature dimension equal to number of features (7). There are two middle layers and finally an output layer with one feature, the estimated home sale price. The model is trained with the parameters:
 * **loss function** is the mean squared error, i.e. $MSE = \frac{1}{n}\sum_{i=1}^n (Y_i - \hat{Y_i})^2$, where $Y_i$ is the true value and $\hat{Y_i}$ is the predicted value.
+* r latexImg('a = \\frac{b}{c}')
 * **optimizer** is [RMSprop](https://keras.io/optimizers/#rmsprop).
 * **epochs** is important to set at more than 0 because epochs defines the number of iterations that the model applies. And with each iteration it improves the prediction. If you set epochs=0, you will get a somewhat normally distributed distribution (mean=some small positive number and sigma=some small positive number) which is totally incorrect because it allows for negative house sale prices and the magnitude of the prices is very low. 
 
