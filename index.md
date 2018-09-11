@@ -39,3 +39,6 @@ I am a father and a working professional with a Master's degree in Financial Eng
 * [Makezine - Arduino](https://makezine.com/category/technology/arduino/)
 * [MatterHackers Articles](https://www.matterhackers.com/articles/)
 * [Quantitative Trading with Robert Carver](https://qoppac.blogspot.com/2015/12/pysystemtrade.html)
+* [Articles by Robert Arnott and Research Affiliates](https://www.researchaffiliates.com/en_us/insights/publications.html)
+* [Articles by Cliff Asness and AQR](https://www.aqr.com/Insights/Research/White-Papers)
+* [Articles by Jeff Gundlach and DoubleLine](https://doubleline.com/category/articles/)

@@ -18,3 +18,4 @@ As with the other sections this Math page contains various resources for my refe
 * [GARCH 1,1](https://github.com/ghbcode/website/tree/master/notebooks/GARCH(1,1).ipynb)
 * [Principal Component Analysis for dimensionality redux](https://github.com/ghbcode/website/tree/master/notebooks/PCA on a set of stocks.ipynb)
 * [Investment Factor Analysis](https://github.com/ghbcode/website/blob/master/notebooks/Factor analysis in investing.ipynb)
+* [Notes on Macroeconomics](/website/notebooks/macroeconomics.html)
