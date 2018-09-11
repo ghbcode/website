@@ -23,3 +23,4 @@ Other topics
 * [Sched - A cross platform Cron alternative](/website/notebooks/sched.html)
 * [Different ways to import resources](/website/notebooks/import_options.html)
 * [statsmodels dev notebooks](http://www.statsmodels.org/dev/examples/)
+* [Creating a RESTful app with Flask and encapsulating it with Docker](/website/notebooks/restful_docker_app.html)
