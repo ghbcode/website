@@ -22,4 +22,4 @@ As with the other sections this Math page contains various resources for my refe
 
 ## Interesting/Brain Teasers
 
-* [tug of war]()
+* [tug of war](https://github.com/ghbcode/website/tree/master/notebooks/Tug-of-war.ipynb)
