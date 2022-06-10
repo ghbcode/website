@@ -21,4 +21,4 @@ I've printed a bunch of toys(not too many to be wasteful...) with this printer a
 
 The borosilicate glass gave me mixed results although that assessment comes before adding adding a BLTouch.  Anyway, I removed the glass and opted for one of those [flexible removable magnetic thingies](https://www.amazon.com/Creality-3D-Ultra-Flexible-Removable-9-25x9-25/dp/B07GRSDKS9). Add to that a BLTouch, Octopi and the [Bed Level Visualizer plugin](https://plugins.octoprint.org/plugins/bedlevelvisualizer/) and the prints are very consitent. I couldn't stop there. Since I already had Octopi running, I added a camera as well as LED lights to the whole setup. Below is a photo of its current state.
 
-![Tevo Tornado ao 2021](assets/tevo_tornado2.jpg =1130x850)
+![Tevo Tornado ao 2021](assets/tevo_tornado2.jpg)
