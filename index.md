@@ -12,14 +12,12 @@ I am a father and a working professional with a Master's degree in Financial Eng
 
 ### Coding & Comp Sci
 * Skilled
-  * Python, R, VB
+  * Python, C#
   * MSSQL/Oracle/MySQL
 * Intermediate
-  * Java, C/C++
+  * Java, javascript, C/C++, R
   * HTML/CSS/XML
   * Tableau
-* Intermediate in the not too distant past
-  * C#
 
 ### Quantitative Courses
 * Forecasting and Risk Analysis
