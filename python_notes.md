@@ -4,6 +4,8 @@ title: Topics in Python and Coding
 description: posted by ghbcode on 2015/01/17
 ---
 
+One of my favorite Python resources is the [talk python to me](https://talkpython.fm/) podcast. I get to catch up on relevant topics while I'm on the road or working on other projects.  
+
 Data queries
   - [Fetch FRED data via fredapi](/website/notebooks/FRED-download.html)
   - [Fetch Quandl data](/website/notebooks/Quandl-download.html)

@@ -3,6 +3,9 @@ layout: default_sidebar
 title: Computer Science
 ---
 
+### Python
+* [Learn Python](https://github.com/trekhleb/learn-python)
+
 ### C/C++ 
 * [Rosettacode.org](http://rosettacode.org/wiki/Category:Programming_Tasks) - how to accomplish the same task using different languages
 * [GeeksforGeeks](https://www.geeksforgeeks.org/) - another repository of algorithms
