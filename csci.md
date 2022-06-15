@@ -5,6 +5,7 @@ title: Computer Science
 
 ### Python
 * [Learn Python](https://github.com/trekhleb/learn-python)
+* [Talk Python To Me Podcast](https://talkpython.fm/) - great way to catch up on what is happening in the Python world from practicioners
 
 ### C/C++ 
 * [Rosettacode.org](http://rosettacode.org/wiki/Category:Programming_Tasks) - how to accomplish the same task using different languages
@@ -19,3 +20,7 @@ title: Computer Science
 
 ### R
 * [R Core Team Reference](https://cran.r-project.org/manuals.html)
+
+### General Comp Sci
+* [Open Source Society University](https://github.com/ossu/computer-science) - a very thorough (intro core and advanced topics) and completely online Computer Science curriculum.
+* [Programming Historian](https://programminghistorian.org/en/lessons/) - the lessons section is an excellent resource
