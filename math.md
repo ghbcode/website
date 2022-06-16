@@ -24,8 +24,8 @@ As with the other sections this Math page contains various resources for my refe
 * [Time Series Analysis - includes regression, ARIMA and ARCH/GARCH](/website/notebooks/TS.html)
 * [GARCH 1,1](https://github.com/ghbcode/website/tree/master/notebooks/GARCH(1,1).ipynb)
 * [Notes on Macroeconomics](/website/notebooks/macroeconomics.html)
-* [Risk Measures](/website/notebooks/risk.ipynb)
-* [Options](/website/notebooks/options.ipynb)
+* [Risk Measures](https://github.com/ghbcode/website/tree/master/notebooks/risk.ipynb)
+* [Options](https://github.com/ghbcode/website/tree/master/notebooks/options.ipynb)
 
 ## Interesting/Brain Teasers
 
