@@ -25,7 +25,7 @@ As with the other sections this Math page contains various resources for my refe
 * [GARCH 1,1](https://github.com/ghbcode/website/tree/master/notebooks/GARCH(1,1).ipynb)
 * [Notes on Macroeconomics](/website/notebooks/macroeconomics.html)
 * [Risk Measures](/website/notebooks/risk.ipynb)
-* [Greeks](/website/notebooks/greeks.ipynb)
+* [Options](/website/notebooks/options.ipynb)
 
 ## Interesting/Brain Teasers
 
