@@ -16,6 +16,7 @@ As with the other sections this Math page contains various resources for my refe
 * [When computing sample variance why divide by n-1?](https://github.com/ghbcode/website/tree/master/notebooks/Why divide by n-1 when computing sample variance.ipynb)
 * [How to generate correlated random variables](https://github.com/ghbcode/website/tree/master/notebooks/Generate correlated random variables.ipynb)
 * [ACF And APF functions](https://github.com/ghbcode/website/tree/master/notebooks/ACF and PACF functions.ipynb)
+* [P-P Q-Q Plots](https://github.com/ghbcode/website/tree/master/notebooks/P-P and Q-Q.ipynb)
 * [Principal Component Analysis for dimensionality redux](https://github.com/ghbcode/website/tree/master/notebooks/PCA on a set of stocks.ipynb)
 
 
