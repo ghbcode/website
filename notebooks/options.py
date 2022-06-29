@@ -103,8 +103,11 @@ T: time to expiry (assumed that we're measuring from t=0 to T)
 from scipy.stats import norm
 
 def d1_calc(S, K, r, vol, T, t):
-    # Calculates d1 in the BSM equation     
-    return (np.log(S/K) + (r + 0.5 * vol**2)*(T-t))/(vol*np.sqrt(T-t))
+    # Calculates d1 in the BSM equation 
+    if S == 0:
+        return (np.log((S+.0001)/K) + (r + 0.5 * vol**2)*(T-t))/(vol*np.sqrt(T-t))
+    else:    
+        return (np.log(S/K) + (r + 0.5 * vol**2)*(T-t))/(vol*np.sqrt(T-t))
 
 def BS_call(S, K, r, vol, T, t):
     d1 = d1_calc(S, K, r, vol, T, t)
