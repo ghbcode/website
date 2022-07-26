@@ -23,6 +23,7 @@ As with the other sections this Math page contains various resources for my refe
 ## Finance Topics
 * [Investment Factor Analysis](https://github.com/ghbcode/website/blob/master/notebooks/Factor analysis in investing.ipynb)
 * [Time Series Analysis - includes regression, ARIMA and ARCH/GARCH](/website/notebooks/TS.html)
+  * [Forecasting Models: what to use and when](https://people.duke.edu/~rnau/whatuse.htm)
 * [GARCH 1,1](https://github.com/ghbcode/website/tree/master/notebooks/GARCH(1,1).ipynb)
 * [Notes on Macroeconomics](/website/notebooks/macroeconomics.html)
 * [Risk Measures](https://github.com/ghbcode/website/tree/master/notebooks/risk.ipynb)
